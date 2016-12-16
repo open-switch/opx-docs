@@ -1,5 +1,5 @@
 # opx-docs
-Welcome to the OpenSwitch Base documentation for Dell platforms project.
+Welcome to the OpenSwitch Base documentation!
 - OpenSwitch Base system overview
 - NAS run-time
 - Architecture
