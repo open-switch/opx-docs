@@ -1,9 +1,16 @@
 # opx-docs
 Welcome to the OpenSwitch Base documentation for Dell platforms project.
 - OpenSwitch Base system overview
-- Features
-- Application programming
-- Hardware virtualization
+- NAS run-time
+- Architecture
 - Repositories
-- Limitations
-
+- Virtualization
+- Installation
+- Build OpenSwitch
+- Operations and Commands
+- Network configuration
+- Programming
+- Topologies
+- Troubleshooting
+- Contributing to OpenSwitch
+- Reporting bugs
