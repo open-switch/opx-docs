@@ -20,12 +20,12 @@ Updated environment: `sudo apt-get update`
 - GIT: `sudo apt-get install git`
 - Repo: See http://source.android.com/source/downloading.html to install the `repo`.
 
-    Make sure you have a bin/ directory in your home directory and that it is included in your path:
-    $ mkdir ~/bin
-    $ PATH=~/bin:$PATH
-    Download the Repo tool and ensure that it is executable:
-    $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-    $ chmod a+x ~/bin/repo
+> Make sure you have a bin/ directory in your home directory and that it is included in your path:
+> $ mkdir ~/bin
+> $ PATH=~/bin:$PATH
+> Download the Repo tool and ensure that it is executable:
+> $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+> $ chmod a+x ~/bin/repo
     
 - apt-utils: `sudo apt-get install apt-utils` 
 - See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/
