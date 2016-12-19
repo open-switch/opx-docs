@@ -6,7 +6,7 @@ See [OpenSwitch Base documentation](https://github.com/amybuck/opx-docs/wiki) fo
 
 ## Get OpenSwitch NAS
 There are two ways to get the OpenSwitch Base:
-- **Download and install binaries** - see [Installation] for complete information, **or**
+- **Download and install binaries** - see [## Installation] for complete information, **or**
 - **Build from scratch** - see the step-by-step instructions below to build the project.
 
 ## Build environment recommendations
