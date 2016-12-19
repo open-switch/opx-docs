@@ -1,5 +1,5 @@
 # Welcome to the OpenSwitch Base project
-This OpenSwitch repo contains the manifest file for the repo tool used to pull down sources for the OpenSwitch network adaptation service (NAS) project. The OpenSwitch Base project is the switch abstraction interface (SAI) host-adapter originally written by Dell, and contributed to the OpenSwitch project. It is assumed that you are familiar with Linux and have basic development knowledge.
+This OpenSwitch repo contains the manifest file for the repo tool used to pull down sources for the OpenSwitch Base project. The OpenSwitch Base project is the switch abstraction interface (SAI) host-adapter originally written by Dell, and contributed to the OpenSwitch project. It is assumed that you are familiar with Linux and have basic development knowledge.
 
 ## Read the documentation
 See [OpenSwitch Base documentation](https://github.com/amybuck/opx-docs/wiki) for complete information.
