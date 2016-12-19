@@ -48,11 +48,23 @@ Updated environment: `sudo apt-get update`
 > **NOTE**: Setup your ssh keys with GitHub [Settings > keys](https://github.com/settings/keys) (we are using git over ssh).
     
 ## Clone the source code
+To get the source files for the OpenSwitch Base, run the commands in an empty directory (root directory). For example: _~/dev/opensiwtch/_:
 
+        repo init -u ssh://git@github.com/OpenSwitch/base-nas-manifest.git
+        repo sync
+        
 ## Build the code
+Setup your path to include _base-build-tools/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
 
+       cd base-build-tools/scripts
+       export PATH-=$PATH:$PWD
+       
 ## OpenSwitch Base Docker environment
+To setup your Docker Base image, use the script in the _base-build-tools/scripts_ folder called `base_setup`. This script builds a Docker container called `docker-base` which will be used by the build scripts:
 
+        cd base-build-tools/scripts/
+        base_setup
+        
 ## Test your environment
 
 ## Build one repository
