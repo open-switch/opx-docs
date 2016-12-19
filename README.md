@@ -82,8 +82,6 @@ Issue the `base_build_all` command from the root directory to build all repos an
 ## Installation
 Once all of the repos have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with other Debian files you downloaded earlier in the root directory.
 
-See [Install OpenSwitch Base on Dell S6000 Platform] for complete information.
-
-(c) 2017 Dell
+See [Install OpenSwitch Base on Dell S6000 Platform](https://github.com/amybuck/opx-docs/wiki/Install-Base-on-Dell-S6000-ON-platform) for complete information.
 
 (c) 2017 Dell
