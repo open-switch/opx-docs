@@ -48,9 +48,9 @@ Updated environment: `sudo apt-get update`
 > **NOTE**: Setup your ssh keys with GitHub [Settings > keys](https://github.com/settings/keys) (we are using git over ssh).
     
 ## Clone the source code
-To get the source files for the OpenSwitch Base, run the commands in an empty directory (root directory). For example: _~/dev/opensiwtch/_:
+To get the source files for the OpenSwitch Base, run the commands in an empty directory (root directory). For example: _~/dev/openswitch/_:
 
-        repo init -u ssh://git@github.com/Azure/sonic-nas-manifest.git
+        repo init -u ssh://git@github.com/Azure/sonic-nas-manifest.git 
         repo sync
         
 ## Build the code
