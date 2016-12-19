@@ -24,7 +24,7 @@ Updated environment: `sudo apt-get update`
         $ mkdir ~/bin
         $ PATH=~/bin:$PATH
     
-        Download the Repo tool and ensure that it is executable:
+        Download the repo tool and ensure that it is executable:
         $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
         $ chmod a+x ~/bin/repo
     
