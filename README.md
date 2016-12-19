@@ -50,8 +50,8 @@ Updated environment: `sudo apt-get update`
 ## Clone the source code
 To get the source files for the OpenSwitch Base, run the commands in an empty directory (root directory). For example: _~/dev/openswitch/_:
 
-        repo init -u ssh://git@github.com/Azure/sonic-nas-manifest.git 
-        repo sync
+        repo init -u ssh://git@github.com/OpenSwitch/base-nas-manifest.git
+        repo sync
         
 ## Build the code
 Setup your path to include _base-build-tools/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
