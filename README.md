@@ -16,3 +16,20 @@ There are two ways to get the OpenSwitch Base:
 - bash (most shell commands refer to bash commands - we like csh as well)
 
 ## The build environment
+
+## Clone the source code
+
+## Build the code
+
+## OpenSwitch Base Docker environment
+
+## Test your environment
+
+## Build one repository
+
+## Build all repositories
+
+## Installation
+
+
+(c) 2017 Dell
