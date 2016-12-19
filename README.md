@@ -50,8 +50,8 @@ Updated environment: `sudo apt-get update`
 ## Clone the source code
 To get the source files for the OpenSwitch Base, run the commands in an empty directory (root directory). For example: _~/dev/opensiwtch/_:
 
-        repo init -u ssh://git@github.com/OpenSwitch/base-nas-manifest.git
-        repo sync
+        repo init -u ssh://git@github.com/Azure/sonic-nas-manifest.git
+        repo sync
         
 ## Build the code
 Setup your path to include _base-build-tools/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
@@ -66,12 +66,24 @@ To setup your Docker Base image, use the script in the _base-build-tools/scripts
         base_setup
         
 ## Test your environment
+You can run `base_build` in the _base-logging_ directory (opx-logging repo):
 
+        cd base-logging
+        base_build -- clean binary
+        
 ## Build one repository
+See the corresponding README.md file associated with the repo for the specific build commands, along with package dependencies.
 
 ## Build all repositories
+Issue the `base_build_all` command from the root directory to build all repos and create packages in the same root directory.
 
+        base_build_all
+        
 ## Installation
+Once all of the repos have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with other Debian files you downloaded earlier in the root directory.
 
+See [Install OpenSwitch Base on Dell S6000 Platform] for complete information.
+
+(c) 2017 Dell
 
 (c) 2017 Dell
