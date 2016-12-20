@@ -1,7 +1,7 @@
 ## NAS run-time
 This information describes the NAS run-time processes and components.
 
-[insert image]
+![](https://github.com/amybuck/opx-docs/edit/master/images/run_time.png)
 
 ## NAS software processes
 
