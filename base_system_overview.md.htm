@@ -1,0 +1,558 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0078)https://github.com/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview/_edit -->
+<!DOCTYPE html PUBLIC "" ""><HTML lang="en"><HEAD prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+     
+<META charset="utf-8">         <LINK href="base_system_overview.md_files/frameworks-b5b2bdade1c8f08cb8817cb4e73677eec388f755aebad89e0d686904a0492b84.css" 
+rel="stylesheet" media="all" crossorigin="anonymous">     <LINK href="base_system_overview.md_files/github-2e72871df0dc404bd4d28dd7992b6dd299e03526cff5bb6455db8a9ef10fcb26.css" 
+rel="stylesheet" media="all" crossorigin="anonymous">                     
+<META http-equiv="X-UA-Compatible" content="IE=edge">     
+<META http-equiv="Content-Language" content="en">     
+<META name="viewport" content="width=device-width">         <TITLE>Editing 
+OpenSwitch Base system overview · amybuck/opx-docs Wiki</TITLE>     <LINK title="GitHub" 
+href="/opensearch.xml" rel="search" 
+type="application/opensearchdescription+xml">     <LINK title="GitHub" href="https://github.com/fluidicon.png" 
+rel="fluid-icon">     <LINK href="/apple-touch-icon.png" rel="apple-touch-icon"> 
+    <LINK href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"> 
+    <LINK href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"> 
+    <LINK href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"> 
+    <LINK href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"> 
+    <LINK href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"> 
+    <LINK href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"> 
+    <LINK href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"> 
+    <LINK href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"> 
+    <LINK href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"> 
+    
+<META content="1401488693436528" property="fb:app_id">       
+<META name="twitter:image:src" content="https://avatars3.githubusercontent.com/u/20581148?v=3&amp;s=400">
+<META name="twitter:site" content="@github">
+<META name="twitter:card" content="summary">
+<META name="twitter:title" content="amybuck/opx-docs">
+<META name="twitter:description" content="opx-docs - Repository for OpenSwitch NAS documentation"> 
+      
+<META content="https://avatars3.githubusercontent.com/u/20581148?v=3&amp;s=400" 
+property="og:image">
+<META content="GitHub" property="og:site_name">
+<META content="object" property="og:type">
+<META content="amybuck/opx-docs" property="og:title">
+<META content="https://github.com/amybuck/opx-docs" property="og:url">
+<META content="opx-docs - Repository for OpenSwitch NAS documentation" property="og:description"> 
+      
+<META name="browser-stats-url" content="https://api.github.com/_private/browser/stats"> 
+    
+<META name="browser-errors-url" content="https://api.github.com/_private/browser/errors"> 
+    <LINK href="https://assets-cdn.github.com/" rel="assets">     <LINK href="wss://live.github.com/_sockets/VjI6MTE1NDk0NTI4OmIxODE4NmFjYzIyZTQ1NGQyZWEzOTNjZWM4MWIxNTI3OWJlZTYzZDY1OTdmZjE0ODJlNzdjMjI1YTRjYjRlZTU=--0102a5ce2695399edd5e08ad4142b5ee8e60eb32" 
+rel="web-socket">     
+<META name="pjax-timeout" content="1000">     <LINK href="/sessions/sudo_modal" 
+rel="sudo-modal">     
+<META name="request-id" content="637FE066:5A35:BDACF24:585943A0" 
+data-pjax-transient="">     
+<META name="msapplication-TileImage" content="/windows-tile.png">     
+<META name="msapplication-TileColor" content="#ffffff">     
+<META name="selected-link" data-pjax-transient="" value="repo_wiki">     
+<META name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU"> 
+<META name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA"> 
+    
+<META name="google-analytics" content="UA-3769691-2"> 
+<META name="octolytics-host" content="collector.githubapp.com">
+<META name="octolytics-app-id" content="github">
+<META name="octolytics-dimension-request_id" content="637FE066:5A35:BDACF24:585943A0">
+<META name="octolytics-actor-id" content="20581148">
+<META name="octolytics-actor-login" content="amybuck">
+<META name="octolytics-actor-hash" content="389b5fabab94a60244171c4d340df004fd3321da692e9b0030f2bd37db80a475"> 
+<META name="analytics-location" content="/<user-name>/<repo-name>/wiki/edit" 
+data-pjax-transient="true">   
+<META name="dimension1" class="js-ga-set" content="Logged In">         
+<META name="hostname" content="github.com">     
+<META name="user-login" content="amybuck">         
+<META name="expected-hostname" content="github.com">       
+<META name="js-proxy-site-detection-payload" content="NGE5ZWFkYTliNmE0OTU2ODc3ODdkMDMxN2Q0NjY4ZGJkYWFjN2I2NWViYjA5YjI5ZDE3ZTkwNzc5OGJlZmI0N3x7InJlbW90ZV9hZGRyZXNzIjoiOTkuMTI3LjIyNC4xMDIiLCJyZXF1ZXN0X2lkIjoiNjM3RkUwNjY6NUEzNTpCREFDRjI0OjU4NTk0M0EwIiwidGltZXN0YW1wIjoxNDgyMjQ1MDI0LCJob3N0IjoiZ2l0aHViLmNvbSJ9"> 
+      <LINK href="https://assets-cdn.github.com/pinned-octocat.svg" rel="mask-icon" 
+color="#000000">       <LINK href="https://assets-cdn.github.com/favicon.ico" 
+rel="icon" type="image/x-icon">     
+<META name="html-safe-nonce" content="5661adc9308b5f79a8af4a74f7cdd3bdb6e287bf"> 
+    
+<META name="form-nonce" content="91ac95869e75042c4afc0d4785c1cc6d29a6352f">     
+<META http-equiv="x-pjax-version" content="368512edfa449304577e4f32dd10c1cd">    
+         
+<META name="description" content="opx-docs - Repository for OpenSwitch NAS documentation"> 
+  
+<META name="go-import" content="github.com/amybuck/opx-docs git https://github.com/amybuck/opx-docs.git"> 
+  
+<META name="octolytics-dimension-user_id" content="20581148">
+<META name="octolytics-dimension-user_login" content="amybuck">
+<META name="octolytics-dimension-repository_id" content="76674593">
+<META name="octolytics-dimension-repository_nwo" content="amybuck/opx-docs">
+<META name="octolytics-dimension-repository_public" content="true">
+<META name="octolytics-dimension-repository_is_fork" content="false">
+<META name="octolytics-dimension-repository_network_root_id" content="76674593">
+<META name="octolytics-dimension-repository_network_root_nwo" content="amybuck/opx-docs"> 
+  <LINK title="Recent Commits to opx-docs:master" href="https://github.com/amybuck/opx-docs/commits/master.atom" 
+rel="alternate" type="application/atom+xml">   
+<META name="GENERATOR" content="MSHTML 11.00.9600.18500"></HEAD>   
+<BODY class="logged-in  env-production windows vis-public">
+<DIV class="pjax-loader-bar" id="js-pjax-loader-bar">
+<DIV class="progress"></DIV></DIV><A tabindex="1" class="accessibility-aid js-skip-to-content" 
+href="https://github.com/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview/_edit#start-of-content">Skip 
+to content</A>                     
+<DIV class="header header-logged-in true" role="banner">
+<DIV class="container clearfix"><A class="header-logo-invertocat" aria-label="Homepage" 
+href="https://github.com/" data-ga-click="Header, go to dashboard, icon:logo" 
+data-hotkey="g d"><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-mark-github" 
+aria-hidden="true" viewBox="0 0 16 16" width="28" height="28" 
+version="1.1"><path fill-rule="evenodd" d="M 8 0 C 3.58 0 0 3.58 0 8 c 0 3.54 2.29 6.53 5.47 7.59 c 0.4 0.07 0.55 -0.17 0.55 -0.38 c 0 -0.19 -0.01 -0.82 -0.01 -1.49 c -2.01 0.37 -2.53 -0.49 -2.69 -0.94 c -0.09 -0.23 -0.48 -0.94 -0.82 -1.13 c -0.28 -0.15 -0.68 -0.52 -0.01 -0.53 c 0.63 -0.01 1.08 0.58 1.23 0.82 c 0.72 1.21 1.87 0.87 2.33 0.66 c 0.07 -0.52 0.28 -0.87 0.51 -1.07 c -1.78 -0.2 -3.64 -0.89 -3.64 -3.95 c 0 -0.87 0.31 -1.59 0.82 -2.15 c -0.08 -0.2 -0.36 -1.02 0.08 -2.12 c 0 0 0.67 -0.21 2.2 0.82 c 0.64 -0.18 1.32 -0.27 2 -0.27 c 0.68 0 1.36 0.09 2 0.27 c 1.53 -1.04 2.2 -0.82 2.2 -0.82 c 0.44 1.1 0.16 1.92 0.08 2.12 c 0.51 0.56 0.82 1.27 0.82 2.15 c 0 3.07 -1.87 3.75 -3.65 3.95 c 0.29 0.25 0.54 0.73 0.54 1.48 c 0 1.07 -0.01 1.93 -0.01 2.2 c 0 0.21 0.15 0.46 0.55 0.38 A 8.013 8.013 0 0 0 16 8 c 0 -4.42 -3.58 -8 -8 -8 Z" 
+/></svg> </A>         
+<DIV class="header-search scoped-search site-scoped-search js-site-search" role="search"><!-- '"` --><!-- </textarea></xmp> -->
+<FORM class="js-site-search-form" action="/amybuck/opx-docs/search" method="get" 
+accept-charset="UTF-8" data-unscoped-search-url="/search" 
+data-scoped-search-url="/amybuck/opx-docs/search">
+<DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"></DIV> 
+    <LABEL class="form-control header-search-wrapper js-chromeless-input-container">
+<DIV class="header-search-scope">This repository</DIV><INPUT name="q" class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable" aria-label="Search this repository" type="text" placeholder="Search" value="" data-hotkey="s" autocapitalize="off" data-scoped-placeholder="Search" data-unscoped-placeholder="Search GitHub"> 
+    </LABEL> </FORM></DIV>
+<UL class="header-nav float-left" role="navigation">
+  <LI class="header-nav-item"><A class="js-selected-navigation-item header-nav-link" 
+  aria-label="Pull requests you created" href="https://github.com/pulls" 
+  data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" 
+  data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">          
+    Pull requests </A></LI>
+  <LI class="header-nav-item"><A class="js-selected-navigation-item header-nav-link" 
+  aria-label="Issues you created" href="https://github.com/issues" 
+  data-ga-click="Header, click, Nav menu - item:issues context:user" 
+  data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues"> 
+             Issues </A></LI>
+  <LI class="header-nav-item"><A class="header-nav-link" href="https://gist.github.com/" 
+  data-ga-click="Header, go to gist, text:gist">Gist</A></LI></UL>
+<UL class="header-nav user-nav float-right" id="user-links">
+  <LI class="header-nav-item"></LI>
+  <LI class="header-nav-item dropdown js-menu-container"><A class="header-nav-link tooltipped tooltipped-s js-menu-target" 
+  aria-label="Create new…" href="https://github.com/new" data-ga-click="Header, create new, icon:add"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-plus float-left" 
+  aria-hidden="true" viewBox="0 0 12 16" width="12" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 12 9 H 7 v 5 H 5 V 9 H 0 V 7 h 5 V 2 h 2 v 5 h 5 Z" 
+  /></svg>       <SPAN class="dropdown-caret"></SPAN>     </A>
+  <DIV class="dropdown-menu-content js-menu-content">
+  <UL class="dropdown-menu dropdown-menu-sw"><A class="dropdown-item" href="https://github.com/new" 
+    data-ga-click="Header, create new repository">  New repository </A><A class="dropdown-item" 
+    href="https://github.com/new/import" data-ga-click="Header, import a repository"> 
+       Import repository   </A><A class="dropdown-item" href="https://gist.github.com/" 
+    data-ga-click="Header, create new gist">  New gist </A><A class="dropdown-item" 
+    href="https://github.com/organizations/new" data-ga-click="Header, create new organization"> 
+       New organization   </A>
+    <DIV class="dropdown-divider"></DIV>
+    <DIV class="dropdown-header"><SPAN title="amybuck/opx-docs">This 
+    repository</SPAN>   </DIV><A class="dropdown-item" href="https://github.com/amybuck/opx-docs/issues/new" 
+    data-ga-click="Header, create new issue">      New issue     </A><A class="dropdown-item" 
+    href="https://github.com/amybuck/opx-docs/settings/collaboration" 
+    data-ga-click="Header, create new collaborator">      New collaborator     
+    </A></UL></DIV></LI>
+  <LI class="header-nav-item dropdown js-menu-container"><A class="header-nav-link name tooltipped tooltipped-sw js-menu-target" 
+  aria-label="View profile and more" href="https://github.com/amybuck" 
+  data-ga-click="Header, show menu, icon:avatar"><IMG width="20" height="20" 
+  class="avatar" alt="@amybuck" 
+  src="base_system_overview.md_files/20581148.png">       <SPAN class="dropdown-caret"></SPAN> 
+      </A>
+  <DIV class="dropdown-menu-content js-menu-content">
+  <DIV class="dropdown-menu dropdown-menu-sw">
+  <DIV class="dropdown-header header-nav-current-user css-truncate">          
+  Signed in as <STRONG class="css-truncate-target">amybuck</STRONG>         
+  </DIV>
+  <DIV class="dropdown-divider"></DIV><A class="dropdown-item" href="https://github.com/amybuck" 
+  data-ga-click="Header, go to profile, text:your profile">          Your 
+  profile         </A><A class="dropdown-item" href="https://github.com/amybuck?tab=stars" 
+  data-ga-click="Header, go to starred repos, text:your stars">          Your 
+  stars         </A><A class="dropdown-item" href="https://github.com/explore" 
+  data-ga-click="Header, go to explore, text:explore">          Explore         
+  </A><A class="dropdown-item" href="https://github.com/integrations" 
+  data-ga-click="Header, go to integrations, text:integrations">            
+  Integrations           </A><A class="dropdown-item" href="https://help.github.com/" 
+  data-ga-click="Header, go to help, text:help">          Help         </A>
+  <DIV class="dropdown-divider"></DIV><A class="dropdown-item" href="https://github.com/settings/profile" 
+  data-ga-click="Header, go to settings, icon:settings">          Settings       
+    </A><!-- '"` --><!-- </textarea></xmp> -->
+  <FORM class="logout-form" action="/logout" method="post" accept-charset="UTF-8" 
+  data-form-nonce="91ac95869e75042c4afc0d4785c1cc6d29a6352f">
+  <DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"><INPUT name="authenticity_token" type="hidden" value="d8vP445SLmeaAMtJZmuRp8KIruBDzkEouoC88vd8Qemi/fn65H5SseX3cINurra1m2Twt9A/Mkj1ilAEpmAxkw=="></DIV> 
+            <BUTTON class="dropdown-item dropdown-signout" type="submit" 
+  data-ga-click="Header, sign out, icon:logout">            Sign out           
+  </BUTTON></FORM></DIV></DIV></LI></UL></DIV></DIV>
+<DIV class="accessibility-aid" id="start-of-content"></DIV>
+<DIV id="js-flash-container"></DIV>
+<DIV role="main">
+<DIV itemtype="http://schema.org/SoftwareSourceCode" itemscope="">
+<DIV id="js-repo-pjax-container" data-pjax-container="">
+<DIV class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<DIV class="container repohead-details-container">
+<UL class="pagehead-actions">
+  <LI><!-- '"` --><!-- </textarea></xmp> -->
+  <FORM class="js-social-container" action="/notifications/subscribe" method="post" 
+  accept-charset="UTF-8" data-form-nonce="91ac95869e75042c4afc0d4785c1cc6d29a6352f" 
+  data-remote="true" data-autosubmit="true">
+  <DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"><INPUT name="authenticity_token" type="hidden" value="faE0HmDBWaMSMVN8/SesZHU8/x2zd9bOCv/A1gQTEhuolwIHCu0ldW3G6Lb14ot2LNChSiCGpa5F9SwgVQ9iYQ=="></DIV> 
+       <INPUT name="repository_id" class="form-control" id="repository_id" type="hidden" value="76674593"> 
+          
+  <DIV class="select-menu js-menu-container js-select-menu"><A tabindex="0" 
+  class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" 
+  aria-haspopup="true" href="https://github.com/amybuck/opx-docs/subscription" 
+  data-ga-click="Repository, click Watch settings, action:wiki#edit"><SPAN 
+  class="js-select-button"><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-eye" 
+  aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 8.06 2 C 3 2 0 8 0 8 s 3 6 8.06 6 C 13 14 16 8 16 8 s -3 -6 -7.94 -6 Z M 8 12 c -2.2 0 -4 -1.78 -4 -4 c 0 -2.2 1.8 -4 4 -4 c 2.22 0 4 1.8 4 4 c 0 2.22 -1.78 4 -4 4 Z m 2 -4 c 0 1.11 -0.89 2 -2 2 c -1.11 0 -2 -0.89 -2 -2 c 0 -1.11 0.89 -2 2 -2 c 1.11 0 2 0.89 2 2 Z" 
+  /></svg>              Unwatch             </SPAN>           </A>           <A 
+  class="social-count js-social-count" aria-label="1 user is watching this repository" 
+  href="https://github.com/amybuck/opx-docs/watchers">            1           
+  </A>         
+  <DIV class="select-menu-modal-holder">
+  <DIV class="select-menu-modal subscription-menu-modal js-menu-content" 
+  aria-hidden="true">
+  <DIV tabindex="-1" class="select-menu-header js-navigation-enable"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-x js-menu-close" 
+  role="img" aria-label="Close" viewBox="0 0 12 16" width="12" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 7.48 8 l 3.75 3.75 l -1.48 1.48 L 6 9.48 l -3.75 3.75 l -1.48 -1.48 L 4.52 8 L 0.77 4.25 l 1.48 -1.48 L 6 6.52 l 3.75 -3.75 l 1.48 1.48 Z" 
+  /></svg><SPAN class="select-menu-title">Notifications</SPAN>             
+</DIV>
+  <DIV class="select-menu-list js-navigation-container" role="menu">
+  <DIV tabindex="0" class="select-menu-item js-navigation-item " 
+  role="menuitem"><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-check select-menu-item-icon" 
+  aria-hidden="true" viewBox="0 0 12 16" width="12" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 12 5 l -8 8 l -4 -4 l 1.5 -1.5 L 4 10 l 6.5 -6.5 Z" 
+  /></svg>                   
+  <DIV class="select-menu-item-text"><INPUT name="do" id="do_included" type="radio" 
+  value="included">                     <SPAN 
+  class="select-menu-item-heading">Not watching</SPAN><SPAN 
+  class="description">Be notified when participating or @mentioned.</SPAN><SPAN 
+  class="js-select-button-text hidden-select-button-text"><svg xmlns="http://www.w3.org/2000/svg" 
+  class="octicon octicon-eye" aria-hidden="true" viewBox="0 0 16 16" width="16" 
+  height="16" version="1.1"><path fill-rule="evenodd" d="M 8.06 2 C 3 2 0 8 0 8 s 3 6 8.06 6 C 13 14 16 8 16 8 s -3 -6 -7.94 -6 Z M 8 12 c -2.2 0 -4 -1.78 -4 -4 c 0 -2.2 1.8 -4 4 -4 c 2.22 0 4 1.8 4 4 c 0 2.22 -1.78 4 -4 4 Z m 2 -4 c 0 1.11 -0.89 2 -2 2 c -1.11 0 -2 -0.89 -2 -2 c 0 -1.11 0.89 -2 2 -2 c 1.11 0 2 0.89 2 2 Z" 
+  /></svg>                      Watch                     </SPAN>                
+     </DIV></DIV>
+  <DIV tabindex="0" class="select-menu-item js-navigation-item selected" role="menuitem"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-check select-menu-item-icon" 
+  aria-hidden="true" viewBox="0 0 12 16" width="12" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 12 5 l -8 8 l -4 -4 l 1.5 -1.5 L 4 10 l 6.5 -6.5 Z" 
+  /></svg>                   
+  <DIV class="select-menu-item-text"><INPUT name="do" id="do_subscribed" type="radio" 
+  value="subscribed">                     <SPAN 
+  class="select-menu-item-heading">Watching</SPAN><SPAN class="description">Be 
+  notified of all conversations.</SPAN><SPAN class="js-select-button-text hidden-select-button-text"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-eye" aria-hidden="true" 
+  viewBox="0 0 16 16" width="16" height="16" version="1.1"><path fill-rule="evenodd" 
+  d="M 8.06 2 C 3 2 0 8 0 8 s 3 6 8.06 6 C 13 14 16 8 16 8 s -3 -6 -7.94 -6 Z M 8 12 c -2.2 0 -4 -1.78 -4 -4 c 0 -2.2 1.8 -4 4 -4 c 2.22 0 4 1.8 4 4 c 0 2.22 -1.78 4 -4 4 Z m 2 -4 c 0 1.11 -0.89 2 -2 2 c -1.11 0 -2 -0.89 -2 -2 c 0 -1.11 0.89 -2 2 -2 c 1.11 0 2 0.89 2 2 Z" 
+  /></svg>                      Unwatch                     </SPAN>              
+       </DIV></DIV>
+  <DIV tabindex="0" class="select-menu-item js-navigation-item " 
+  role="menuitem"><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-check select-menu-item-icon" 
+  aria-hidden="true" viewBox="0 0 12 16" width="12" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 12 5 l -8 8 l -4 -4 l 1.5 -1.5 L 4 10 l 6.5 -6.5 Z" 
+  /></svg>                   
+  <DIV class="select-menu-item-text"><INPUT name="do" id="do_ignore" type="radio" 
+  value="ignore">                     <SPAN 
+  class="select-menu-item-heading">Ignoring</SPAN><SPAN 
+  class="description">Never be notified.</SPAN><SPAN class="js-select-button-text hidden-select-button-text"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-mute" aria-hidden="true" 
+  viewBox="0 0 16 16" width="16" height="16" version="1.1"><path fill-rule="evenodd" 
+  d="M 8 2.81 v 10.38 c 0 0.67 -0.81 1 -1.28 0.53 L 3 10 H 1 c -0.55 0 -1 -0.45 -1 -1 V 7 c 0 -0.55 0.45 -1 1 -1 h 2 l 3.72 -3.72 C 7.19 1.81 8 2.14 8 2.81 Z m 7.53 3.22 l -1.06 -1.06 l -1.97 1.97 l -1.97 -1.97 l -1.06 1.06 L 11.44 8 L 9.47 9.97 l 1.06 1.06 l 1.97 -1.97 l 1.97 1.97 l 1.06 -1.06 L 13.56 8 l 1.97 -1.97 Z" 
+  /></svg>                      Stop ignoring                     </SPAN>        
+             </DIV></DIV></DIV></DIV></DIV></DIV></FORM></LI>
+  <LI>
+  <DIV class="js-toggler-container js-social-container starring-container "><!-- '"` --><!-- </textarea></xmp> -->
+  <FORM class="starred" action="/amybuck/opx-docs/unstar" method="post" 
+  accept-charset="UTF-8" data-form-nonce="91ac95869e75042c4afc0d4785c1cc6d29a6352f" 
+  data-remote="true">
+  <DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"><INPUT name="authenticity_token" type="hidden" value="pj/KG+wgwQARHBEu0WusLszb/CHUIkLn7uRy2u+ssl1zCfwChgy91m7rquTZros8lTeidkfTMYeh7p4svrDCJw=="></DIV> 
+        <BUTTON title="Unstar amybuck/opx-docs" class="btn btn-sm btn-with-count js-toggler-target" 
+  aria-label="Unstar this repository" type="submit" data-ga-click="Repository, click unstar button, action:wiki#edit; text:Unstar"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-star" aria-hidden="true" 
+  viewBox="0 0 14 16" width="14" height="16" version="1.1"><path fill-rule="evenodd" 
+  d="M 14 6 l -4.9 -0.64 L 7 1 L 4.9 5.36 L 0 6 l 3.6 3.26 L 2.67 14 L 7 11.67 L 11.33 14 l -0.93 -4.74 Z" 
+  /></svg>        Unstar       </BUTTON>         <A class="social-count js-social-count" 
+  aria-label="0 users starred this repository" href="https://github.com/amybuck/opx-docs/stargazers"> 
+           0         </A> </FORM><!-- '"` --><!-- </textarea></xmp> -->
+  <FORM class="unstarred" action="/amybuck/opx-docs/star" method="post" 
+  accept-charset="UTF-8" data-form-nonce="91ac95869e75042c4afc0d4785c1cc6d29a6352f" 
+  data-remote="true">
+  <DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"><INPUT name="authenticity_token" type="hidden" value="yQ4ufyqbgjI0lK6Y0FSAzJcf6RpvRqi8GUDgt0yJrTkcOBhmQLf+5EtjFVLYkafezvO3Tfy329xWSgxBHZXdQw=="></DIV> 
+        <BUTTON title="Star amybuck/opx-docs" class="btn btn-sm btn-with-count js-toggler-target" 
+  aria-label="Star this repository" type="submit" data-ga-click="Repository, click star button, action:wiki#edit; text:Star"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-star" aria-hidden="true" 
+  viewBox="0 0 14 16" width="14" height="16" version="1.1"><path fill-rule="evenodd" 
+  d="M 14 6 l -4.9 -0.64 L 7 1 L 4.9 5.36 L 0 6 l 3.6 3.26 L 2.67 14 L 7 11.67 L 11.33 14 l -0.93 -4.74 Z" 
+  /></svg>        Star       </BUTTON>         <A class="social-count js-social-count" 
+  aria-label="0 users starred this repository" href="https://github.com/amybuck/opx-docs/stargazers"> 
+           0         </A> </FORM></DIV></LI>
+  <LI><A title="Fork your own copy of amybuck/opx-docs to your account" class="btn btn-sm btn-with-count" 
+  aria-label="Fork your own copy of amybuck/opx-docs to your account" href="https://github.com/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview/_edit#fork-destination-box" 
+  rel="facebox" data-ga-click="Repository, show fork modal, action:wiki#edit; text:Fork"><svg 
+  xmlns="http://www.w3.org/2000/svg" class="octicon octicon-repo-forked" 
+  aria-hidden="true" viewBox="0 0 10 16" width="10" height="16" 
+  version="1.1"><path fill-rule="evenodd" d="M 8 1 a 1.993 1.993 0 0 0 -1 3.72 V 6 L 5 8 L 3 6 V 4.72 A 1.993 1.993 0 0 0 2 1 a 1.993 1.993 0 0 0 -1 3.72 V 6.5 l 3 3 v 1.78 A 1.993 1.993 0 0 0 5 15 a 1.993 1.993 0 0 0 1 -3.72 V 9.5 l 3 -3 V 4.72 A 1.993 1.993 0 0 0 8 1 Z M 2 4.2 C 1.34 4.2 0.8 3.65 0.8 3 c 0 -0.65 0.55 -1.2 1.2 -1.2 c 0.65 0 1.2 0.55 1.2 1.2 c 0 0.65 -0.55 1.2 -1.2 1.2 Z m 3 10 c -0.66 0 -1.2 -0.55 -1.2 -1.2 c 0 -0.65 0.55 -1.2 1.2 -1.2 c 0.65 0 1.2 0.55 1.2 1.2 c 0 0.65 -0.55 1.2 -1.2 1.2 Z m 3 -10 c -0.66 0 -1.2 -0.55 -1.2 -1.2 c 0 -0.65 0.55 -1.2 1.2 -1.2 c 0.65 0 1.2 0.55 1.2 1.2 c 0 0.65 -0.55 1.2 -1.2 1.2 Z" 
+  /></svg>            Fork           </A>           
+  <DIV id="fork-destination-box" style="display: none;">
+  <H2 class="facebox-header" data-facebox-id="facebox-header">Where should we 
+  fork this repository?</H2><include-fragment class="js-fork-select-fragment fork-select-fragment" 
+  data-url="/amybuck/opx-docs/fork?fragment=1" src=""><IMG width="64" height="64" 
+  alt="Loading" src="base_system_overview.md_files/octocat-spinner-128.gif">     
+          </include-fragment></DIV><A class="social-count" aria-label="0 users forked this repository" 
+  href="https://github.com/amybuck/opx-docs/network">      0     </A>   </LI></UL>
+<H1 class="public "><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-repo" 
+aria-hidden="true" viewBox="0 0 12 16" width="12" height="16" 
+version="1.1"><path fill-rule="evenodd" d="M 4 9 H 3 V 8 h 1 v 1 Z m 0 -3 H 3 v 1 h 1 V 6 Z m 0 -2 H 3 v 1 h 1 V 4 Z m 0 -2 H 3 v 1 h 1 V 2 Z m 8 -1 v 12 c 0 0.55 -0.45 1 -1 1 H 6 v 2 l -1.5 -1.5 L 3 16 v -2 H 1 c -0.55 0 -1 -0.45 -1 -1 V 1 c 0 -0.55 0.45 -1 1 -1 h 10 c 0.55 0 1 0.45 1 1 Z m -1 10 H 1 v 2 h 2 v -1 h 3 v 1 h 5 v -2 Z m 0 -10 H 2 v 9 h 9 V 1 Z" 
+/></svg>   <SPAN class="author" itemprop="author"><A class="url fn" href="https://github.com/amybuck" 
+rel="author">amybuck</A></SPAN><!--
+--><SPAN class="path-divider">/</SPAN><!--
+--><STRONG 
+itemprop="name"><A href="https://github.com/amybuck/opx-docs" data-pjax="#js-repo-pjax-container">opx-docs</A></STRONG> 
+</H1></DIV>
+<DIV class="container"><NAV class="reponav js-repo-nav js-sidenav-container-pjax" 
+role="navigation" itemtype="http://schema.org/BreadcrumbList" itemscope="" 
+data-pjax="#js-repo-pjax-container"><SPAN itemtype="http://schema.org/ListItem" 
+itemscope="" itemprop="itemListElement"><A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs" data-hotkey="g c" 
+data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /amybuck/opx-docs" 
+itemprop="url"><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-code" 
+aria-hidden="true" viewBox="0 0 14 16" width="14" height="16" 
+version="1.1"><path fill-rule="evenodd" d="M 9.5 3 L 8 4.5 L 11.5 8 L 8 11.5 L 9.5 13 L 14 8 L 9.5 3 Z m -5 0 L 0 8 l 4.5 5 L 6 11.5 L 2.5 8 L 6 4.5 L 4.5 3 Z" 
+/></svg>       <SPAN itemprop="name">Code</SPAN>       
+<META content="1" itemprop="position"> </A>  </SPAN>     <SPAN itemtype="http://schema.org/ListItem" 
+itemscope="" itemprop="itemListElement"><A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs/issues" data-hotkey="g i" 
+data-selected-links="repo_issues repo_labels repo_milestones /amybuck/opx-docs/issues" 
+itemprop="url"><svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-issue-opened" 
+aria-hidden="true" viewBox="0 0 14 16" width="14" height="16" 
+version="1.1"><path fill-rule="evenodd" d="M 7 2.3 c 3.14 0 5.7 2.56 5.7 5.7 s -2.56 5.7 -5.7 5.7 A 5.71 5.71 0 0 1 1.3 8 c 0 -3.14 2.56 -5.7 5.7 -5.7 Z M 7 1 C 3.14 1 0 4.14 0 8 s 3.14 7 7 7 s 7 -3.14 7 -7 s -3.14 -7 -7 -7 Z m 1 3 H 6 v 5 h 2 V 4 Z m 0 6 H 6 v 2 h 2 v -2 Z" 
+/></svg>         <SPAN itemprop="name">Issues</SPAN>         <SPAN class="counter">0</SPAN> 
+        
+<META content="2" itemprop="position"> </A>    </SPAN>   <SPAN itemtype="http://schema.org/ListItem" 
+itemscope="" itemprop="itemListElement"><A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs/pulls" data-hotkey="g p" 
+data-selected-links="repo_pulls /amybuck/opx-docs/pulls" itemprop="url"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-git-pull-request" 
+aria-hidden="true" viewBox="0 0 12 16" width="12" height="16" 
+version="1.1"><path fill-rule="evenodd" d="M 11 11.28 V 5 c -0.03 -0.78 -0.34 -1.47 -0.94 -2.06 C 9.46 2.35 8.78 2.03 8 2 H 7 V 0 L 4 3 l 3 3 V 4 h 1 c 0.27 0.02 0.48 0.11 0.69 0.31 c 0.21 0.2 0.3 0.42 0.31 0.69 v 6.28 A 1.993 1.993 0 0 0 10 15 a 1.993 1.993 0 0 0 1 -3.72 Z m -1 2.92 c -0.66 0 -1.2 -0.55 -1.2 -1.2 c 0 -0.65 0.55 -1.2 1.2 -1.2 c 0.65 0 1.2 0.55 1.2 1.2 c 0 0.65 -0.55 1.2 -1.2 1.2 Z M 4 3 c 0 -1.11 -0.89 -2 -2 -2 a 1.993 1.993 0 0 0 -1 3.72 v 6.56 A 1.993 1.993 0 0 0 2 15 a 1.993 1.993 0 0 0 1 -3.72 V 4.72 c 0.59 -0.34 1 -0.98 1 -1.72 Z m -0.8 10 c 0 0.66 -0.55 1.2 -1.2 1.2 c -0.65 0 -1.2 -0.55 -1.2 -1.2 c 0 -0.65 0.55 -1.2 1.2 -1.2 c 0.65 0 1.2 0.55 1.2 1.2 Z M 2 4.2 C 1.34 4.2 0.8 3.65 0.8 3 c 0 -0.65 0.55 -1.2 1.2 -1.2 c 0.65 0 1.2 0.55 1.2 1.2 c 0 0.65 -0.55 1.2 -1.2 1.2 Z" 
+/></svg>       <SPAN itemprop="name">Pull requests</SPAN>       <SPAN class="counter">0</SPAN> 
+      
+<META content="3" itemprop="position"> </A>  </SPAN>   <A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs/projects" data-selected-links="repo_projects new_repo_project repo_project /amybuck/opx-docs/projects"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-project" aria-hidden="true" 
+viewBox="0 0 15 16" width="15" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 10 12 h 3 V 2 h -3 v 10 Z m -4 -2 h 3 V 2 H 6 v 8 Z m -4 4 h 3 V 2 H 2 v 12 Z m -1 1 h 13 V 1 H 1 v 14 Z M 14 0 H 1 a 1 1 0 0 0 -1 1 v 14 a 1 1 0 0 0 1 1 h 13 a 1 1 0 0 0 1 -1 V 1 a 1 1 0 0 0 -1 -1 Z" 
+/></svg>    Projects     <SPAN class="counter">0</SPAN> </A>     <A class="js-selected-navigation-item selected reponav-item" 
+href="https://github.com/amybuck/opx-docs/wiki" data-hotkey="g w" 
+data-selected-links="repo_wiki /amybuck/opx-docs/wiki"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-book" aria-hidden="true" viewBox="0 0 16 16" width="16" 
+height="16" version="1.1"><path fill-rule="evenodd" d="M 3 5 h 4 v 1 H 3 V 5 Z m 0 3 h 4 V 7 H 3 v 1 Z m 0 2 h 4 V 9 H 3 v 1 Z m 11 -5 h -4 v 1 h 4 V 5 Z m 0 2 h -4 v 1 h 4 V 7 Z m 0 2 h -4 v 1 h 4 V 9 Z m 2 -6 v 9 c 0 0.55 -0.45 1 -1 1 H 9.5 l -1 1 l -1 -1 H 2 c -0.55 0 -1 -0.45 -1 -1 V 3 c 0 -0.55 0.45 -1 1 -1 h 5.5 l 1 1 l 1 -1 H 15 c 0.55 0 1 0.45 1 1 Z m -8 0.5 L 7.5 3 H 2 v 9 h 6 V 3.5 Z m 7 -0.5 H 9.5 l -0.5 0.5 V 12 h 6 V 3 Z" 
+/></svg>      Wiki </A>   <A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs/pulse" data-selected-links="pulse /amybuck/opx-docs/pulse"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-pulse" aria-hidden="true" 
+viewBox="0 0 14 16" width="14" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 11.5 8 L 8.8 5.4 L 6.6 8.5 L 5.5 1.6 L 2.38 8 H 0 v 2 h 3.6 l 0.9 -1.8 l 0.9 5.4 L 9 8.5 l 1.6 1.5 H 14 V 8 Z" 
+/></svg>    Pulse </A>   <A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs/graphs" data-selected-links="repo_graphs repo_contributors /amybuck/opx-docs/graphs"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-graph" aria-hidden="true" 
+viewBox="0 0 16 16" width="16" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 16 14 v 1 H 0 V 0 h 1 v 14 h 15 Z M 5 13 H 3 V 8 h 2 v 5 Z m 4 0 H 7 V 3 h 2 v 10 Z m 4 0 h -2 V 6 h 2 v 7 Z" 
+/></svg>    Graphs </A>     <A class="js-selected-navigation-item reponav-item" 
+href="https://github.com/amybuck/opx-docs/settings" data-selected-links="repo_settings repo_branch_settings hooks integration_installations /amybuck/opx-docs/settings"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-gear" aria-hidden="true" 
+viewBox="0 0 14 16" width="14" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 14 8.77 v -1.6 l -1.94 -0.64 l -0.45 -1.09 l 0.88 -1.84 l -1.13 -1.13 l -1.81 0.91 l -1.09 -0.45 l -0.69 -1.92 h -1.6 l -0.63 1.94 l -1.11 0.45 l -1.84 -0.88 l -1.13 1.13 l 0.91 1.81 l -0.45 1.09 L 0 7.23 v 1.59 l 1.94 0.64 l 0.45 1.09 l -0.88 1.84 l 1.13 1.13 l 1.81 -0.91 l 1.09 0.45 l 0.69 1.92 h 1.59 l 0.63 -1.94 l 1.11 -0.45 l 1.84 0.88 l 1.13 -1.13 l -0.92 -1.81 l 0.47 -1.09 L 14 8.75 v 0.02 Z M 7 11 c -1.66 0 -3 -1.34 -3 -3 s 1.34 -3 3 -3 s 3 1.34 3 3 s -1.34 3 -3 3 Z" 
+/></svg>      Settings </A> </NAV></DIV></DIV>
+<DIV class="container new-discussion-timeline experiment-repo-nav">
+<DIV class="repository-content"><INPUT id="current-version" type="hidden" value="93fa0eff86cf11049d0ebe32266fbd6c328b4506"> 
+<DIV class="wiki-wrapper edit outer" id="wiki-wrapper">
+<DIV class="gh-header">
+<DIV class="gh-header-actions"><!-- '"` --><!-- </textarea></xmp> -->
+<FORM class="inline-form" action="/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview" 
+method="post" accept-charset="UTF-8" data-form-nonce="91ac95869e75042c4afc0d4785c1cc6d29a6352f">
+<DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"><INPUT name="_method" type="hidden" value="delete"><INPUT name="authenticity_token" type="hidden" value="0T60YWYiiqm9nQDPL5a0rLq4VVw5YJxs4B/ktFr3nssECIJ4DA72f8JquwUnU5O+41QLC6qR7wyvFQhCC+vusQ=="></DIV> 
+          <BUTTON class="btn btn-sm btn-danger" type="submit" data-confirm="Are you sure you want to delete this page?"> 
+           Delete Page           </BUTTON> </FORM><A class="btn btn-sm " href="https://github.com/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview/_history">Page 
+History</A>       <A class="btn btn-sm btn-primary" href="https://github.com/amybuck/opx-docs/wiki/_new">New 
+Page</A>     </DIV>
+<H1 class="gh-header-title">Editing OpenSwitch Base system overview</H1></DIV>
+<DIV class="wiki-content" id="wiki-content">
+<DIV class="edit gollum-editor" id="gollum-editor"><!-- '"` --><!-- </textarea></xmp> -->
+<FORM name="gollum-editor" action="/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview" 
+method="post" accept-charset="UTF-8" data-form-nonce="91ac95869e75042c4afc0d4785c1cc6d29a6352f">
+<DIV 
+style="margin: 0px; padding: 0px; display: inline;"><INPUT name="utf8" type="hidden" value="✓"><INPUT name="_method" type="hidden" value="put"><INPUT name="authenticity_token" type="hidden" value="bcv6Is1CcfxehabAiCf/MdB/FM4NqMOULVHjd00r9zq4/cw7p24NKiFyHQqA4tgjiZNKmZ5ZsPRiWw+BHDeHQA=="></DIV> 
+         
+<DIV class="gollum-editor-title-field" 
+id="gollum-editor-title-field"><INPUT name="wiki[name]" class="form-control gollum-editor-page-title input-block" id="gollum-editor-page-title" aria-label="Title" required="required" type="text" placeholder="Title" value="OpenSwitch Base system overview"></DIV>
+<DIV class="js-previewable-comment-form js-suggester-container previewable-comment-form write-selected" 
+data-preview-authenticity-token="TROEjf/D9irL2DSrDN1dNkcb1O7eDggi6tlAPNASs2qYJbKUle+K/LQvj2EEGHokHveKuU3/e0Kl06zKgQ7DEA==" 
+data-preview-url="/amybuck/opx-docs/wiki/_preview">
+<DIV class="comment-form-head tabnav"><NAV class="tabnav-tabs"><BUTTON class="btn-link tabnav-tab write-tab js-write-tab selected" 
+type="button">Write</BUTTON>       <BUTTON class="btn-link tabnav-tab preview-tab js-preview-tab" 
+type="button">Preview</BUTTON>     </NAV></DIV>
+<DIV class="gollum-editor-function-bar clearfix" 
+id="gollum-editor-function-bar">
+<DIV class="gollum-editor-function-buttons" id="gollum-editor-function-buttons">
+<DIV class="BtnGroup"><BUTTON tabindex="-1" title="Header 1" class="btn btn-sm BtnGroup-item function-button" 
+id="function-h1" type="button"><B>h1</B>     </BUTTON>     <BUTTON tabindex="-1" 
+title="Header 2" class="btn btn-sm BtnGroup-item function-button" id="function-h2" 
+type="button"><B>h2</B>     </BUTTON>     <BUTTON tabindex="-1" title="Header 3" 
+class="btn btn-sm BtnGroup-item function-button" id="function-h3" 
+type="button"><B>h3</B>     </BUTTON>   </DIV>
+<DIV class="BtnGroup"><BUTTON tabindex="-1" title="Link" class="btn btn-sm BtnGroup-item function-button" 
+id="function-link" aria-label="Add link" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-link" aria-hidden="true" viewBox="0 0 16 16" width="16" 
+height="16" version="1.1"><path fill-rule="evenodd" d="M 4 9 h 1 v 1 H 4 c -1.5 0 -3 -1.69 -3 -3.5 S 2.55 3 4 3 h 4 c 1.45 0 3 1.69 3 3.5 c 0 1.41 -0.91 2.72 -2 3.25 V 8.59 c 0.58 -0.45 1 -1.27 1 -2.09 C 10 5.22 8.98 4 8 4 H 4 c -0.98 0 -2 1.22 -2 2.5 S 3 9 4 9 Z m 9 -3 h -1 v 1 h 1 c 1 0 2 1.22 2 2.5 S 13.98 12 13 12 H 9 c -0.98 0 -2 -1.22 -2 -2.5 c 0 -0.83 0.42 -1.64 1 -2.09 V 6.25 c -1.09 0.53 -2 1.84 -2 3.25 C 6 11.31 7.55 13 9 13 h 4 c 1.45 0 3 -1.69 3 -3.5 S 14.5 6 13 6 Z" 
+/></svg>     </BUTTON>     <BUTTON tabindex="-1" title="Image" class="btn btn-sm BtnGroup-item function-button" 
+id="function-image" aria-label="Add image" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-file-media" aria-hidden="true" viewBox="0 0 12 16" 
+width="12" height="16" version="1.1"><path fill-rule="evenodd" d="M 6 5 h 2 v 2 H 6 V 5 Z m 6 -0.5 V 14 c 0 0.55 -0.45 1 -1 1 H 1 c -0.55 0 -1 -0.45 -1 -1 V 2 c 0 -0.55 0.45 -1 1 -1 h 7.5 L 12 4.5 Z M 11 5 L 8 2 H 1 v 11 l 3 -5 l 2 4 l 2 -2 l 3 3 V 5 Z" 
+/></svg>     </BUTTON>   </DIV>
+<DIV class="BtnGroup"><BUTTON tabindex="-1" title="Bold" class="btn btn-sm BtnGroup-item function-button" 
+id="function-bold" aria-label="Add bold text" type="button"><B>B</B>     
+</BUTTON>     <BUTTON tabindex="-1" title="Italic" class="btn btn-sm BtnGroup-item function-button" 
+id="function-italic" aria-label="Add italic text" type="button"><EM>i</EM>     
+</BUTTON>     <BUTTON tabindex="-1" title="Code" class="btn btn-sm BtnGroup-item function-button" 
+id="function-code" aria-label="Insert code" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-code" aria-hidden="true" viewBox="0 0 14 16" width="14" 
+height="16" version="1.1"><path fill-rule="evenodd" d="M 9.5 3 L 8 4.5 L 11.5 8 L 8 11.5 L 9.5 13 L 14 8 L 9.5 3 Z m -5 0 L 0 8 l 4.5 5 L 6 11.5 L 2.5 8 L 6 4.5 L 4.5 3 Z" 
+/></svg>     </BUTTON>   </DIV>
+<DIV class="BtnGroup"><BUTTON tabindex="-1" title="Unordered List" class="btn btn-sm BtnGroup-item function-button" 
+id="function-ul" aria-label="Add unordered list" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-list-unordered" aria-hidden="true" viewBox="0 0 12 16" 
+width="12" height="16" version="1.1"><path fill-rule="evenodd" d="M 2 13 c 0 0.59 0 1 -0.59 1 H 0.59 C 0 14 0 13.59 0 13 c 0 -0.59 0 -1 0.59 -1 h 0.81 c 0.59 0 0.59 0.41 0.59 1 H 2 Z m 2.59 -9 h 6.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 H 4.59 C 4 2 4 2.41 4 3 c 0 0.59 0 1 0.59 1 Z M 1.41 7 H 0.59 C 0 7 0 7.41 0 8 c 0 0.59 0 1 0.59 1 h 0.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 h 0.01 Z m 0 -5 H 0.59 C 0 2 0 2.41 0 3 c 0 0.59 0 1 0.59 1 h 0.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 h 0.01 Z m 10 5 H 4.59 C 4 7 4 7.41 4 8 c 0 0.59 0 1 0.59 1 h 6.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 h 0.01 Z m 0 5 H 4.59 C 4 12 4 12.41 4 13 c 0 0.59 0 1 0.59 1 h 6.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 h 0.01 Z" 
+/></svg>     </BUTTON>     <BUTTON tabindex="-1" title="Ordered List" class="btn btn-sm BtnGroup-item function-button" 
+id="function-ol" aria-label="Add ordered list" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-list-ordered" aria-hidden="true" viewBox="0 0 12 16" 
+width="12" height="16" version="1.1"><path fill-rule="evenodd" d="M 12 13 c 0 0.59 0 1 -0.59 1 H 4.59 C 4 14 4 13.59 4 13 c 0 -0.59 0 -1 0.59 -1 h 6.81 c 0.59 0 0.59 0.41 0.59 1 H 12 Z M 4.59 4 h 6.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 H 4.59 C 4 2 4 2.41 4 3 c 0 0.59 0 1 0.59 1 Z m 6.81 3 H 4.59 C 4 7 4 7.41 4 8 c 0 0.59 0 1 0.59 1 h 6.81 c 0.59 0 0.59 -0.41 0.59 -1 c 0 -0.59 0 -1 -0.59 -1 Z M 2 1 h -0.72 c -0.3 0.19 -0.58 0.25 -1.03 0.34 V 2 H 1 v 2.14 H 0.16 V 5 H 3 v -0.86 H 2 V 1 Z m 0.25 8.13 c -0.17 0 -0.45 0.03 -0.66 0.06 c 0.53 -0.56 1.14 -1.25 1.14 -1.89 C 2.71 6.52 2.17 6 1.37 6 c -0.59 0 -0.97 0.2 -1.38 0.64 l 0.58 0.58 c 0.19 -0.19 0.38 -0.38 0.64 -0.38 c 0.28 0 0.48 0.16 0.48 0.52 c 0 0.53 -0.77 1.2 -1.7 2.06 V 10 h 3 l -0.09 -0.88 h -0.66 l 0.01 0.01 Z m -0.08 3.78 v -0.03 c 0.44 -0.19 0.64 -0.47 0.64 -0.86 c 0 -0.7 -0.56 -1.11 -1.44 -1.11 c -0.48 0 -0.89 0.19 -1.28 0.52 l 0.55 0.64 c 0.25 -0.2 0.44 -0.31 0.69 -0.31 c 0.27 0 0.42 0.13 0.42 0.36 c 0 0.27 -0.2 0.44 -0.86 0.44 v 0.75 c 0.83 0 0.98 0.17 0.98 0.47 c 0 0.25 -0.23 0.38 -0.58 0.38 c -0.28 0 -0.56 -0.14 -0.81 -0.38 l -0.48 0.66 c 0.3 0.36 0.77 0.56 1.41 0.56 c 0.83 0 1.53 -0.41 1.53 -1.16 c 0 -0.5 -0.31 -0.81 -0.77 -0.94 v 0.01 Z" 
+/></svg>     </BUTTON>     <BUTTON tabindex="-1" title="Blockquote" class="btn btn-sm BtnGroup-item function-button" 
+id="function-blockquote" aria-label="Insert blockquote" type="button"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-quote" aria-hidden="true" 
+viewBox="0 0 14 16" width="14" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 6.16 3.5 C 3.73 5.06 2.55 6.67 2.55 9.36 c 0.16 -0.05 0.3 -0.05 0.44 -0.05 c 1.27 0 2.5 0.86 2.5 2.41 c 0 1.61 -1.03 2.61 -2.5 2.61 c -1.9 0 -2.99 -1.52 -2.99 -4.25 c 0 -3.8 1.75 -6.53 5.02 -8.42 L 6.16 3.5 Z m 7 0 c -2.43 1.56 -3.61 3.17 -3.61 5.86 c 0.16 -0.05 0.3 -0.05 0.44 -0.05 c 1.27 0 2.5 0.86 2.5 2.41 c 0 1.61 -1.03 2.61 -2.5 2.61 c -1.89 0 -2.98 -1.52 -2.98 -4.25 c 0 -3.8 1.75 -6.53 5.02 -8.42 l 1.14 1.84 h -0.01 Z" 
+/></svg>     </BUTTON>     <BUTTON tabindex="-1" title="Horizontal Rule" class="btn btn-sm BtnGroup-item function-button" 
+id="function-hr" aria-label="Insert horizontal rule" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-horizontal-rule" aria-hidden="true" viewBox="0 0 10 16" 
+width="10" height="16" version="1.1"><path fill-rule="evenodd" d="M 1 7 h 2 v 2 h 1 V 3 H 3 v 3 H 1 V 3 H 0 v 6 h 1 V 7 Z m 9 2 V 7 H 9 v 2 h 1 Z m 0 -3 V 4 H 9 v 2 h 1 Z M 7 6 V 4 h 2 V 3 H 6 v 6 h 1 V 7 h 2 V 6 H 7 Z m -7 7 h 10 v -2 H 0 v 2 Z" 
+/></svg>     </BUTTON>   </DIV><BUTTON tabindex="-1" title="Help" class="btn btn-sm function-button" 
+id="function-help" aria-label="Help" type="button" 
+data-dismiss-help-authenticity-token="ME/5utYYZ4MDTaXAVgYvqVKF6YWjTeznjEaGoc3afkflec+jvDQbVXy6Hgpewwi7C2m30jC8n4fDTGpXnMYOPQ==" 
+data-dismiss-help-url="/wiki/help"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-question" aria-hidden="true" viewBox="0 0 14 16" width="14" 
+height="16" version="1.1"><path fill-rule="evenodd" d="M 6 10 h 2 v 2 H 6 v -2 Z m 4 -3.5 C 10 8.64 8 9 8 9 H 6 c 0 -0.55 0.45 -1 1 -1 h 0.5 c 0.28 0 0.5 -0.22 0.5 -0.5 v -1 c 0 -0.28 -0.22 -0.5 -0.5 -0.5 h -1 c -0.28 0 -0.5 0.22 -0.5 0.5 V 7 H 4 c 0 -1.5 1.5 -3 3 -3 s 3 1 3 2.5 Z M 7 2.3 c 3.14 0 5.7 2.56 5.7 5.7 s -2.56 5.7 -5.7 5.7 A 5.71 5.71 0 0 1 1.3 8 c 0 -3.14 2.56 -5.7 5.7 -5.7 Z M 7 1 C 3.14 1 0 4.14 0 8 s 3.14 7 7 7 s 7 -3.14 7 -7 s -3.14 -7 -7 -7 Z" 
+/></svg>   </BUTTON> </DIV>
+<DIV class="gollum-editor-format-selector" 
+id="gollum-editor-format-selector"><LABEL for="wiki_format">Edit mode:</LABEL>   
+      <SELECT name="wiki[format]" class="form-select select select-sm" id="wiki_format"><OPTION 
+  value="asciidoc">AsciiDoc</OPTION> <OPTION value="creole">Creole</OPTION> 
+  <OPTION selected="selected" value="markdown">Markdown</OPTION> <OPTION value="mediawiki">MediaWiki</OPTION> 
+  <OPTION value="org">Org-mode</OPTION> <OPTION value="pod">Pod</OPTION> <OPTION 
+  value="rdoc">RDoc</OPTION> <OPTION value="textile">Textile</OPTION> <OPTION 
+  value="rest">reStructuredText</OPTION></SELECT>       </DIV></DIV>
+<DIV class="gollum-editor-help jaws" id="gollum-editor-help">
+<UL class="gollum-editor-help-parent" id="gollum-editor-help-parent">
+  <LI></LI></UL>
+<UL class="gollum-editor-help-list" id="gollum-editor-help-list">
+  <LI></LI></UL>
+<DIV class="gollum-editor-help-wrapper" id="gollum-editor-help-wrapper">
+<DIV class="gollum-editor-help-content" id="gollum-editor-help-content">
+<P></P></DIV></DIV></DIV>
+<DIV class="write-content js-write-bucket">
+<DIV class="gollum-error-message" 
+id="gollum-error-message"></DIV><TEXTAREA name="wiki[body]" class="form-control input-block gollum-editor-body comment-form-textarea js-comment-field js-quick-submit js-suggester-field input-with-fullscreen-icon" id="gollum-editor-body" aria-label="Page content" required="required" format="markdown" data-markup-lang="markdown">The OpenSwitch Base system is an innovative operating system for network systems. This information describes how it enables you to unleash new and creative ways to deploy, orchestrate, and manage your networking, servers, and storage solutions in your data centers and enterprise environments. 
+
+OpenSwitch Base uses an unmodified Linux kernel and standard distribution to take advantage of rich ecosystem, and also provide flexibility in customizing your Base system according to your network needs.
+
+This information describes how to obtain source code, build, install, and use the OpenSwitch system packages for hardware platforms (supports Dell S6000 only for release 1.0). Also provided are brief descriptions of the architecture, run-time environment, and code structure of the OpenSwitch project.
+
+## Features
+- Provides an abstraction of hardware devices of network switch platforms in a Linux OS environment
+- Uses standard open source software including an ONIE installer, and an unmodified Linux kernel based on Debian Jessie distribution
+- Provides a robust and flexible programmatic API - control plan services (CPS)
+- Accesses OpenSwitch networking features using either the Linux standard API or the CPS
+- Provides a rich set of networking features including full access to the NPU ACL and QoS functionality using the CPS
+
+## Application programming
+Provides an object-centric API for application development to implement custom applications using a well-defined object model, and set of programmatic APIs. The object model is defined using YANG modeling, and the APIs support Python and C/C++ programming languages. See [Application Programming] for more information.
+
+## Hardware virtualization
+The OpenSwitch software supports hardware virtualization (or simulation). Software simulation of basic hardware functionality is also provided (“white board”), and the higher layer software functionality can be developed and tested on generic PC/server hardware. See [Hardware Virtualization] for more information.
+
+## Repositories
+The repository structure is organized around the main architecture components:
+- NAS and SAI
+- PAS and SDI
+- Infrastructure
+
+## Limitations
+Only the Dell S6000-ON series is currently supported in this release, and other platforms may be supported in the future. OpenSwitch software uses an earlier version of the SAI specification. The OpenSwitch implementation will be compliant to the future SAI API v1.0 when available.</TEXTAREA>
+<DIV class="suggester-container">
+<DIV class="suggester js-suggester js-navigation-container" data-url="/amybuck/opx-docs/suggestions/wiki"></DIV></DIV></DIV>
+<DIV class="preview-content">
+<DIV class="comment-body js-comment-body js-preview-body"></DIV></DIV></DIV>
+<DIV class="singleline" id="gollum-editor-edit-summary"><LABEL class="jaws" for="gollum-editor-message-field">Edit 
+Message</LABEL><INPUT name="wiki[commit]" class="form-control input-block" id="gollum-editor-message-field" type="text" placeholder="Write a small message here explaining this change. (Optional)" value=""></DIV>
+<DIV class="form-actions"><BUTTON class="btn btn-primary" id="gollum-editor-submit" 
+type="submit" data-disable-with="">Save Page</BUTTON> 
+</DIV></FORM></DIV></DIV></DIV></DIV>
+<DIV class="modal-backdrop js-touch-events"></DIV></DIV></DIV></DIV></DIV>
+<DIV class="container site-footer-container">
+<DIV class="site-footer" role="contentinfo">
+<UL class="site-footer-links float-right">
+  <LI><A href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact 
+  GitHub</A></LI>
+  <LI><A href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</A></LI>
+  <LI><A href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</A></LI>
+  <LI><A href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</A></LI>
+  <LI><A href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</A></LI>
+  <LI><A href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</A></LI></UL><A 
+title="GitHub" class="site-footer-mark" aria-label="Homepage" href="https://github.com/"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-mark-github" 
+aria-hidden="true" viewBox="0 0 16 16" width="24" height="24" 
+version="1.1"><path fill-rule="evenodd" d="M 8 0 C 3.58 0 0 3.58 0 8 c 0 3.54 2.29 6.53 5.47 7.59 c 0.4 0.07 0.55 -0.17 0.55 -0.38 c 0 -0.19 -0.01 -0.82 -0.01 -1.49 c -2.01 0.37 -2.53 -0.49 -2.69 -0.94 c -0.09 -0.23 -0.48 -0.94 -0.82 -1.13 c -0.28 -0.15 -0.68 -0.52 -0.01 -0.53 c 0.63 -0.01 1.08 0.58 1.23 0.82 c 0.72 1.21 1.87 0.87 2.33 0.66 c 0.07 -0.52 0.28 -0.87 0.51 -1.07 c -1.78 -0.2 -3.64 -0.89 -3.64 -3.95 c 0 -0.87 0.31 -1.59 0.82 -2.15 c -0.08 -0.2 -0.36 -1.02 0.08 -2.12 c 0 0 0.67 -0.21 2.2 0.82 c 0.64 -0.18 1.32 -0.27 2 -0.27 c 0.68 0 1.36 0.09 2 0.27 c 1.53 -1.04 2.2 -0.82 2.2 -0.82 c 0.44 1.1 0.16 1.92 0.08 2.12 c 0.51 0.56 0.82 1.27 0.82 2.15 c 0 3.07 -1.87 3.75 -3.65 3.95 c 0.29 0.25 0.54 0.73 0.54 1.48 c 0 1.07 -0.01 1.93 -0.01 2.2 c 0 0.21 0.15 0.46 0.55 0.38 A 8.013 8.013 0 0 0 16 8 c 0 -4.42 -3.58 -8 -8 -8 Z" 
+/></svg> </A>     
+<UL class="site-footer-links">
+  <LI>© 2016 <SPAN 
+  title="0.10002s from github-fe164-cp1-prd.iad.github.net">GitHub</SPAN>, 
+  Inc.</LI>
+  <LI><A href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</A></LI>
+  <LI><A href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</A></LI>
+  <LI><A href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</A></LI>
+  <LI><A href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</A></LI>
+  <LI><A href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</A></LI></UL></DIV></DIV>
+<DIV class="ajax-error-message flash flash-error" id="ajax-error-message"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-alert" aria-hidden="true" 
+viewBox="0 0 16 16" width="16" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 8.865 1.52 c -0.18 -0.31 -0.51 -0.5 -0.87 -0.5 s -0.69 0.19 -0.87 0.5 L 0.275 13.5 c -0.18 0.31 -0.18 0.69 0 1 c 0.19 0.31 0.52 0.5 0.87 0.5 h 13.7 c 0.36 0 0.69 -0.19 0.86 -0.5 c 0.17 -0.31 0.18 -0.69 0.01 -1 L 8.865 1.52 Z M 8.995 13 h -2 v -2 h 2 v 2 Z m 0 -3 h -2 V 6 h 2 v 4 Z" 
+/></svg>       <BUTTON class="flash-close js-flash-close js-ajax-error-dismiss" 
+aria-label="Dismiss error" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-x" aria-hidden="true" viewBox="0 0 12 16" width="12" 
+height="16" version="1.1"><path fill-rule="evenodd" d="M 7.48 8 l 3.75 3.75 l -1.48 1.48 L 6 9.48 l -3.75 3.75 l -1.48 -1.48 L 4.52 8 L 0.77 4.25 l 1.48 -1.48 L 6 6.52 l 3.75 -3.75 l 1.48 1.48 Z" 
+/></svg>       </BUTTON>      You can't perform that action at this time.     
+</DIV>
+<SCRIPT src="base_system_overview.md_files/compat-30ce4c86c27f88c3d1b4eb03efda59b45d8d7c871880dee0b8f73d5ef1b25fdf.js" crossorigin="anonymous"></SCRIPT>
+       
+<SCRIPT src="base_system_overview.md_files/frameworks-a8670e28e78b3f0194dfe4ff495533fa523e7e70006dbf5ac4e6a97e8a957abd.js" crossorigin="anonymous"></SCRIPT>
+       
+<SCRIPT src="base_system_overview.md_files/github-8b6f127f8765a35a34ebae227c02c78b74904872bf58075b4edc134d4eb2c218.js" async="async" crossorigin="anonymous"></SCRIPT>
+                   
+<SCRIPT src="base_system_overview.md_files/wiki-c9841c312a6214a1976f5733d51a1cf45a2165e605e67e6ed1bf80073ba993fb.js" crossorigin="anonymous"></SCRIPT>
+           
+<DIV class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none"><svg 
+xmlns="http://www.w3.org/2000/svg" class="octicon octicon-alert" aria-hidden="true" 
+viewBox="0 0 16 16" width="16" height="16" version="1.1"><path fill-rule="evenodd" 
+d="M 8.865 1.52 c -0.18 -0.31 -0.51 -0.5 -0.87 -0.5 s -0.69 0.19 -0.87 0.5 L 0.275 13.5 c -0.18 0.31 -0.18 0.69 0 1 c 0.19 0.31 0.52 0.5 0.87 0.5 h 13.7 c 0.36 0 0.69 -0.19 0.86 -0.5 c 0.17 -0.31 0.18 -0.69 0.01 -1 L 8.865 1.52 Z M 8.995 13 h -2 v -2 h 2 v 2 Z m 0 -3 h -2 V 6 h 2 v 4 Z" 
+/></svg>       <SPAN class="signed-in-tab-flash">You signed in with another tab 
+or window. <A href="https://github.com/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview/">Reload</A> 
+to refresh your session.</SPAN>       <SPAN class="signed-out-tab-flash">You 
+signed out in another tab or window. <A href="https://github.com/amybuck/opx-docs/wiki/OpenSwitch-Base-system-overview/">Reload</A> 
+to refresh your session.</SPAN>     </DIV>
+<DIV class="facebox" id="facebox" style="display: none;">
+<DIV class="facebox-popup">
+<DIV class="facebox-content" role="dialog" aria-describedby="facebox-description" 
+aria-labelledby="facebox-header"></DIV><BUTTON class="facebox-close js-facebox-close" 
+aria-label="Close modal" type="button"><svg xmlns="http://www.w3.org/2000/svg" 
+class="octicon octicon-x" aria-hidden="true" viewBox="0 0 12 16" width="12" 
+height="16" version="1.1"><path fill-rule="evenodd" d="M 7.48 8 l 3.75 3.75 l -1.48 1.48 L 6 9.48 l -3.75 3.75 l -1.48 -1.48 L 4.52 8 L 0.77 4.25 l 1.48 -1.48 L 6 6.52 l 3.75 -3.75 l 1.48 1.48 Z" 
+/></svg>     </BUTTON>   </DIV></DIV></BODY></HTML>
