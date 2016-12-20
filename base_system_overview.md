@@ -14,10 +14,13 @@ This information describes how to obtain source code, build, install, and use th
 - Provides a rich set of networking features including full access to the NPU ACL and QoS functionality using the CPS
 
 ## Application programming
-Provides an object-centric API for application development to implement custom applications using a well-defined object model, and set of programmatic APIs. The object model is defined using YANG modeling, and the APIs support Python and C/C++ programming languages. See [Application Programming] for more information.
+Provides an object-centric API for application development to implement custom applications using a well-defined object model, and set of programmatic APIs. The object model is defined using YANG modeling, and the APIs support Python and C/C++ programming languages. See [Application programming](https://github.com/amybuck/opx-docs/edit/master/application_programming.md) for more information.
 
 ## Hardware virtualization
-The OpenSwitch software supports hardware virtualization (or simulation). Software simulation of basic hardware functionality is also provided (“white board”), and the higher layer software functionality can be developed and tested on generic PC/server hardware. See [Hardware Virtualization] for more information.## RepositoriesThe repository structure is organized around the main architecture components:- NAS and SAI- PAS and SDI- Infrastructure
+The OpenSwitch software supports hardware virtualization (or simulation). Software simulation of basic hardware functionality is also provided (“white board”), and the higher layer software functionality can be developed and tested on generic PC/server hardware. See [Hardware virtualization](https://github.com/amybuck/opx-docs/edit/master/hardware_virtualization.md) for more information.
+
+## Repositories
+The repository structure is organized around the main architecture components:- NAS and SAI- PAS and SDI- Infrastructure
 
 ## Limitations
 Only the Dell S6000-ON series is currently supported in this release, and other platforms may be supported in the future. OpenSwitch software uses an earlier version of the SAI specification. The OpenSwitch implementation will be compliant to the future SAI API v1.0 when available.
