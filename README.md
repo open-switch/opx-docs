@@ -84,4 +84,4 @@ Once all of the repos have been built, you can install the created ONIE Debian x
 
 See [Install OpenSwitch Base on Dell S6000 Platform](https://github.com/amybuck/opx-docs/wiki/Install-Base-on-Dell-S6000-ON-platform) for complete information.
 
-(c) 2017 Dell
+(c) 2016 Dell
