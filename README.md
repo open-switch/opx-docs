@@ -13,7 +13,7 @@ There are two ways to get the OpenSwitch OPX:
 - Intel multi-core
 - Ubuntu 16.04 or later (desktop edition with Python installed)
 - 20G available free disk space
-- bash (most shell commands refer to bash commands - we like csh as well)
+- bash (most shell commands refer to bash commands — we like csh as well)
 
 ## The build environment
 Updated environment: `sudo apt-get update`
