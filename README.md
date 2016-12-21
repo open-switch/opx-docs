@@ -6,8 +6,8 @@ See [OpenSwitch OPX documentation](https://github.com/open-switch/opx-docs/wiki/
 
 ## Get OpenSwitch NAS
 There are two ways to get the OpenSwitch OPX:
-- **Download and install binaries** - see Installation below for complete information, **or**
-- **Build from scratch** - see the step-by-step instructions below to build the project.
+- **Download and install binaries** — see Installation below for complete information, **or**
+- **Build from scratch** — see the step-by-step instructions below to build the project.
 
 ## Build environment recommendations
 - Intel multi-core
