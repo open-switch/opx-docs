@@ -2,7 +2,7 @@
 This OpenSwitch repo contains the manifest file for the repo tool used to pull down sources for the OpenSwitch Base project. The OpenSwitch Base project is the switch abstraction interface (SAI) host-adapter originally written by Dell, and contributed to the OpenSwitch project. It is assumed that you are familiar with Linux and have basic development knowledge.
 
 ## Read the documentation
-See [OpenSwitch Base documentation](https://github.com/amybuck/opx-docs/wiki) for complete information.
+See [OpenSwitch OPX documentation](https://github.com/open-switch/opx-docs/wiki/OpenSwitch-OPX-documentation) for complete information.
 
 ## Get OpenSwitch NAS
 There are two ways to get the OpenSwitch Base:
@@ -54,34 +54,34 @@ To get the source files for the OpenSwitch Base, run the commands in an empty di
         repo sync
         
 ## Build the code
-Setup your path to include _base-build-tools/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
+Setup your path to include _opx-build-tools/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
 
-       cd base-build-tools/scripts
+       cd opx-build-tools/scripts
        export PATH-=$PATH:$PWD
        
-## OpenSwitch Base Docker environment
-To setup your Docker Base image, use the script in the _base-build-tools/scripts_ folder called `base_setup`. This script builds a Docker container called `docker-base` which will be used by the build scripts:
+## OpenSwitch OPX Docker environment
+To setup your Docker OPX image, use the script in the _opx-build-tools/scripts_ folder called `opx_setup`. This script builds a Docker container called `docker-opx` which will be used by the build scripts:
 
-        cd base-build-tools/scripts/
-        base_setup
+        cd opx-build-tools/scripts/
+        opx_setup
         
 ## Test your environment
-You can run `base_build` in the _base-logging_ directory (opx-logging repo):
+You can run `opx_build` in the _opx-logging_ directory (opx-logging repo):
 
-        cd base-logging
-        base_build -- clean binary
+        cd opx-logging
+        opx_build -- clean binary
         
 ## Build one repository
 See the corresponding README.md file associated with the repo for the specific build commands, along with package dependencies.
 
 ## Build all repositories
-Issue the `base_build_all` command from the root directory to build all repos and create packages in the same root directory.
+Issue the `opx_build_all` command from the root directory to build all repos and create packages in the same root directory.
 
-        base_build_all
+        opx_build_all
         
 ## Installation
 Once all of the repos have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with other Debian files you downloaded earlier in the root directory.
 
-See [Install OpenSwitch Base on Dell S6000 Platform](https://github.com/amybuck/opx-docs/wiki/Install-Base-on-Dell-S6000-ON-platform) for complete information.
+See [Install OpenSwitch OPX on Dell S6000 Platform](https://github.com/open-switch/opx-docs/wiki/Install-OPX-on-Dell-S6000-ON-platform) for complete information.
 
 (c) 2016 Dell
