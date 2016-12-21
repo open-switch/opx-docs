@@ -75,23 +75,23 @@ To setup your Docker OPX image, use the script in the _opx-build/scripts_ folder
 ## Build one repository
 Go to the root directory where you installed the OPX repositories and run the OPX Docker container:
 
-    cd ~/dev/opx
-    docker run --privileged -i -t -v ${PWD}:/mnt docker-opx:lastest
+    cd ~/dev/opx
+    docker run --privileged -i -t -v ${PWD}:/mnt docker-opx:lastest
     
 Setup the builder environment inside the Docker container:
 
-    root@077f7b30f8ef:/# DIST=jessie git-pbuilder create
+    root@077f7b30f8ef:/# DIST=jessie git-pbuilder create
 
 To build a single repository, go to the repository and build. For example, to build `opx_logging`:
 
-    root@077f7b30f8ef:/# cd /mnt/opx-logging
-    root@077f7b30f8ef:/mnt/opx-logging# git-buildpackage --git-dist=jessie  --git-ignore-branch --git-pbuilder    
+    root@077f7b30f8ef:/# cd /mnt/opx-logging
+    root@077f7b30f8ef:/mnt/opx-logging# git-buildpackage --git-dist=jessie  --git-ignore-branch --git-pbuilder    
 
 ## Build all repositories
 Issue the `opx_build_all` command from the root directory to build all repos and create packages in the same root directory.
 
     opx_build_all
-        
+       
 ## Installation
 Once all of the repositories have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with other Debian files you downloaded earlier in the root directory.
 
