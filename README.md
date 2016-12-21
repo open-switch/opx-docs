@@ -4,7 +4,7 @@ This OpenSwitch repo contains the manifest file for the repo tool used to pull d
 ## Read the documentation
 See [OpenSwitch OPX documentation](https://github.com/open-switch/opx-docs/wiki/OpenSwitch-OPX-documentation) for complete information.
 
-## Get OpenSwitch NAS
+## Get OpenSwitch OPX
 There are two ways to get the OpenSwitch OPX:
 - **Download and install binaries** — see Installation below for complete information, **or**
 - **Build from scratch** — see the step-by-step instructions below to build the project.
