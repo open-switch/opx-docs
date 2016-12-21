@@ -4,8 +4,8 @@ This OpenSwitch repo contains the manifest file for the repo tool used to pull d
 ## Read the documentation
 See [OpenSwitch OPX documentation](https://github.com/open-switch/opx-docs/wiki) for complete information.
 
-## Get OpenSwitch OPX
-There are two ways to get the OpenSwitch OPX:
+## Get OpenSwitch
+There are two ways to get the image:
 - **Download and install binaries** — see Installation below for complete information, **or**
 - **Build from scratch** — see the step-by-step instructions below to build the project.
 
@@ -13,18 +13,21 @@ There are two ways to get the OpenSwitch OPX:
 - Intel multi-core
 - Ubuntu 16.04 or later (desktop edition with Python installed)
 - 20G available free disk space
-- bash (most shell commands refer to bash commands — we like csh as well)
 
 ## The build environment
+
+### Prerequisites
 Updated environment: `sudo apt-get update`
 - GIT: `sudo apt-get install git`
 - Repo: See http://source.android.com/source/downloading.html to install the `repo`.
 
-        Make sure you have a bin/ directory in your home directory and that it is included in your path:
+  - Make sure you have a bin/ directory in your home directory and that it is included in your path:
+
         $ mkdir ~/bin
         $ PATH=~/bin:$PATH
     
-        Download the repo tool and ensure that it is executable:
+  - Download the repo tool and ensure that it is executable:
+
         $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
         $ chmod a+x ~/bin/repo
     
@@ -48,31 +51,41 @@ Updated environment: `sudo apt-get update`
 > **NOTE**: Setup your ssh keys with GitHub [Settings > keys](https://github.com/settings/keys) (we are using git over ssh).
     
 ## Clone the source code
-To get the source files for the OpenSwitch OPX, run the commands in an empty directory (root directory). For example: _~/dev/openswitch/_:
+To get the source files for the OpenSwitch OPX repositories, run the commands in an empty directory (root directory). For example: _~/dev/opx/_:
 
-        repo init -u ssh://git@github.com/open-switch/opx-nas-manifest.git
+        repo init -u ssh://git@github.com/open-switch/opx-manifest.git
         repo sync
         
-## Build the code
-Setup your path to include _opx-build-tools/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
+The `repo sync` command downloads all of the source files that you need to build OpenSwitch. In addition to the source files, you will also need some binary libraries for the SAI. The SAI is currently not open sourced entirely, as it is based on Broadcom's SDK and there is no open source SAI implementation from Broadcom at this time.
 
-       cd opx-build-tools/scripts
+All build scripts are find in the `opx_build` repo and will be dowloaded as part of the above `repo sync`.
+
+## Build the code
+Setup your path to include _opx-build/scripts_ folder (if you plan to run this command often, you could optionally add it to the `.bashrc`):
+
+       cd opx-build/scripts
        export PATH-=$PATH:$PWD
        
-## OPX Docker environment
-To setup your Docker OPX image, use the script in the _opx-build-tools/scripts_ folder called `opx_setup`. This script builds a Docker container called `docker-opx` which will be used by the build scripts:
+## OpenSwitch Docker environment
+To setup your Docker OPX image, use the script in the _opx-build/scripts_ folder called `opx_setup`. This script builds a Docker container called `docker-opx` which will be used by the build scripts:
 
-        cd opx-build-tools/scripts/
+        cd opx-build/scripts/
         opx_setup
-        
-## Test your environment
-You can run `opx_build` in the _opx-logging_ directory (opx-logging repo):
-
-        cd opx-logging
-        opx_build -- clean binary
-        
+            
 ## Build one repository
-See the corresponding README.md file associated with the repo for the specific build commands, along with package dependencies.
+Go to the root directory where you installed the OPX repositories and run the OPX Docker container:
+
+    cd ~/dev/opx
+    docker run --privileged -i -t -v ${PWD}:/mnt docker-opx:lastest
+    
+Setup the builder environment inside the Docker container:
+
+    root@077f7b30f8ef:/# DIST=jessie git-pbuilder create
+
+To build a single repository, go to the repository and build. For example, to build `opx_logging`:
+
+    root@077f7b30f8ef:/# cd /mnt/opx-logging
+    root@077f7b30f8ef:/mnt/opx-logging# git-buildpackage --git-dist=jessie  --git-ignore-branch --git-pbuilder    
 
 ## Build all repositories
 Issue the `opx_build_all` command from the root directory to build all repos and create packages in the same root directory.
@@ -80,7 +93,7 @@ Issue the `opx_build_all` command from the root directory to build all repos and
         opx_build_all
         
 ## Installation
-Once all of the repos have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with other Debian files you downloaded earlier in the root directory.
+Once all of the repositories have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with other Debian files you downloaded earlier in the root directory.
 
 See [Install OpenSwitch OPX on Dell S6000 Platform](https://github.com/open-switch/opx-docs/wiki/Install-OPX-on-Dell-S6000-ON-platform) for complete information.
 
