@@ -5,7 +5,7 @@ This OpenSwitch repo contains the manifest file for the repo tool used to pull d
 See [OpenSwitch OPX documentation](https://github.com/open-switch/opx-docs/wiki/OpenSwitch-OPX-documentation) for complete information.
 
 ## Get OpenSwitch NAS
-There are two ways to get the OpenSwitch Base:
+There are two ways to get the OpenSwitch OPX:
 - **Download and install binaries** - see Installation below for complete information, **or**
 - **Build from scratch** - see the step-by-step instructions below to build the project.
 
@@ -48,9 +48,9 @@ Updated environment: `sudo apt-get update`
 > **NOTE**: Setup your ssh keys with GitHub [Settings > keys](https://github.com/settings/keys) (we are using git over ssh).
     
 ## Clone the source code
-To get the source files for the OpenSwitch Base, run the commands in an empty directory (root directory). For example: _~/dev/openswitch/_:
+To get the source files for the OpenSwitch OPX, run the commands in an empty directory (root directory). For example: _~/dev/openswitch/_:
 
-        repo init -u ssh://git@github.com/OpenSwitch/base-nas-manifest.git
+        repo init -u ssh://git@github.com/open-switch/opx-nas-manifest.git
         repo sync
         
 ## Build the code
@@ -59,7 +59,7 @@ Setup your path to include _opx-build-tools/scripts_ folder (if you plan to run 
        cd opx-build-tools/scripts
        export PATH-=$PATH:$PWD
        
-## OpenSwitch OPX Docker environment
+## OPX Docker environment
 To setup your Docker OPX image, use the script in the _opx-build-tools/scripts_ folder called `opx_setup`. This script builds a Docker container called `docker-opx` which will be used by the build scripts:
 
         cd opx-build-tools/scripts/
