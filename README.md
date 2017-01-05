@@ -25,13 +25,13 @@ Updated environment: `sudo apt-get update`
 
   - Make sure you have a bin/ directory in your home directory and that it is included in your path:
 
-        $ mkdir ~/bin
-        $ PATH=~/bin:$PATH
+          $ mkdir ~/bin
+          $ PATH=~/bin:$PATH
     
   - Download the repo tool and ensure that it is executable:
 
-        $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-        $ chmod a+x ~/bin/repo
+          $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+          $ chmod a+x ~/bin/repo
     
 - apt-utils: `sudo apt-get install apt-utils` 
 - See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information.
