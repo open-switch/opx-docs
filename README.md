@@ -1,4 +1,6 @@
 # opx-docs
+Welcome to the OpenSwitch OPX project!
+
 This OpenSwitch repository contains the manifest file for the repository tool used to pull down sources for the OpenSwitch OPX project. The OpenSwitch OPX project is the switch abstraction interface (SAI) host-adapter originally written by Dell, and contributed to the OpenSwitch project. It is assumed that you are familiar with Linux and have basic development knowledge.
 
 ## Read the documentation
@@ -32,8 +34,7 @@ Updated environment: `sudo apt-get update`
         $ chmod a+x ~/bin/repo
     
 - apt-utils: `sudo apt-get install apt-utils` 
-- See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/
-    ) for complete information.
+- See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information.
     
         sudo apt-get install docker.io
         sudo apt-get install docker-engine
