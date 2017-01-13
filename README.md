@@ -21,17 +21,7 @@ There are two ways to get the image:
 ### Prerequisites
 Updated environment: `sudo apt-get update`
 - GIT: `sudo apt-get install git`
-- Repo: See http://source.android.com/source/downloading.html to install the `repo`.
-
-  - Make sure you have a bin/ directory in your home directory and that it is included in your path:
-
-          $ mkdir ~/bin
-          $ PATH=~/bin:$PATH
-    
-  - Install the repo:
-
-          sudo apt-get install repo
-    
+- Repo tools: `sudo apt-get install repo`
 - apt-utils: `sudo apt-get install apt-utils` 
 - See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information.
     
