@@ -23,10 +23,8 @@ Updated environment: `sudo apt-get update`
 - GIT: `sudo apt-get install git`
 - Repo: `sudo apt-get install repo`
 - apt-utils: `sudo apt-get install apt-utils` 
-- See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information.
-    
-        sudo apt-get install docker.io    
-
+- Docker: `sudo apt-get install docker.io` (see [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information)
+    
 ## Clone the source code
 To get the source files for the OpenSwitch OPX repositories, run the commands in an empty directory (root directory). For example: _~/dev/opx/_:
 
