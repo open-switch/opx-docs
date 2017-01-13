@@ -28,33 +28,26 @@ Updated environment: `sudo apt-get update`
           $ mkdir ~/bin
           $ PATH=~/bin:$PATH
     
-  - Download the repo tool and ensure that it is executable:
+  - Install the repo:
 
-          $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-          $ chmod a+x ~/bin/repo
+          sudo apt-get install repo
     
 - apt-utils: `sudo apt-get install apt-utils` 
 - See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information.
     
-        sudo apt-get install docker.io
-        sudo apt-get install docker-engine
-        sudo service docker start    
+        sudo apt-get install docker.io    
 
 - To avoid running Docker commands as root (with `sudo`):
 
-        sudo groupadd docker ### The 'docker' group might already exist
         sudo gpasswd -a ${USER} docker ### Add your user id to the 'docker' group
         sudo service docker restart
 
 - You may need to log out/in to activate the changes to groups
-- Ensure that you have proper permissions to close the source file (ssh keys must be installed)
-
-> **NOTE**: Setup your ssh keys with GitHub [Settings > keys](https://github.com/settings/keys) (we are using git over ssh).
-    
+ 
 ## Clone the source code
 To get the source files for the OpenSwitch OPX repositories, run the commands in an empty directory (root directory). For example: _~/dev/opx/_:
 
-    repo init -u ssh://git@github.com/open-switch/opx-manifest.git
+    repo init -u https://github.com/open-switch/opx-manifest.git
     repo sync
         
 The `repo sync` command downloads all of the source files that you need to build OpenSwitch. In addition to the source files, you will also need some binary libraries for the SAI. The SAI is currently not open sourced entirely, as it is based on Broadcom's SDK and there is no open source SAI implementation from Broadcom at this time.
