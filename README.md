@@ -37,13 +37,6 @@ Updated environment: `sudo apt-get update`
     
         sudo apt-get install docker.io    
 
-- To avoid running Docker commands as root (with `sudo`):
-
-        sudo gpasswd -a ${USER} docker ### Add your user id to the 'docker' group
-        sudo service docker restart
-
-- You may need to log out/in to activate the changes to groups
- 
 ## Clone the source code
 To get the source files for the OpenSwitch OPX repositories, run the commands in an empty directory (root directory). For example: _~/dev/opx/_:
 
