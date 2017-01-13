@@ -21,7 +21,7 @@ There are two ways to get the image:
 ### Prerequisites
 Updated environment: `sudo apt-get update`
 - GIT: `sudo apt-get install git`
-- Repo tools: `sudo apt-get install repo`
+- Repo: `sudo apt-get install repo`
 - apt-utils: `sudo apt-get install apt-utils` 
 - See [Docker environment setup guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for complete information.
     
