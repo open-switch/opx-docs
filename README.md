@@ -51,8 +51,8 @@ To setup your Docker OPX image, use the script in the _opx-build/scripts_ folder
 Go to the root directory where you installed the OPX repositories and run the OPX Docker container:
 
     cd ~/dev/opx
-    docker run --privileged -i -t -v ${PWD}:/mnt docker-opx:lastest
-    
+    docker run --privileged -i -t -v ${PWD}:/mnt docker-opx:lastest
+    
 Setup the builder environment inside the Docker container:
 
     root@077f7b30f8ef:/# DIST=jessie git-pbuilder create
