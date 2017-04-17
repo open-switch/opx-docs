@@ -1,0 +1,4 @@
+[gerrit]
+host=review.openswitch.net
+port=29418
+project=opx/opx-docs
