@@ -1,4 +1,4 @@
-#Python code block to delete VLAN
+# Python code block to delete VLAN
 
 import cps
 import cps_object
