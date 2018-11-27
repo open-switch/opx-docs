@@ -1,6 +1,7 @@
-#Python code block to create a VLAN
-import cps_object
-import cps
+#Python code block to create VLAN
+
+import   cps_object
+import   cps
 
 # Create CPS Object
 cps_obj = cps_object.CPSObject('dell-base-if-cmn/if/interfaces/interface')
@@ -18,4 +19,5 @@ transaction = cps.transaction([cps_update])
 # Check for failure
 if not transaction: 
     raise RuntimeError ("Error creating Vlan")
+    
 print "Successfully created"
