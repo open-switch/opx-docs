@@ -1,5 +1,7 @@
+#Python code block to create a VLAN
 import cps_object
 import cps
+
 # Create CPS Object
 cps_obj = cps_object.CPSObject('dell-base-if-cmn/if/interfaces/interface')
 
