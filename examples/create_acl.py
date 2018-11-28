@@ -1,9 +1,7 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
-"""Simple   Base   ACL  CPS   config   using   the   generic   CPS   Python   module   and utilities. 
-Create   ACL  Table
-Create   ACL  Entry   to   Drop   all   packets   received   on  specific   port   from   specific   Src   MAC 
-"""
+# Simple   Base   ACL  CPS   config   using   the   generic   CPS   Python   module   and utilities.
+# Create   ACL  Table
+# Create   ACL  Entry   to   Drop   all   packets   received   on  specific   port   from   specific   Src   MAC
 
 import cps_utils
 import nas_os_utils
@@ -55,4 +53,5 @@ if not r:
 
 ret = cps_utils.CPSObject(module='base-acl/table', obj=r[0]['change'])
 tbl_id = ret.get_attr_data('id')
+
 print 'Successfully   created   ACL  Table   ' + str(tbl_id)
