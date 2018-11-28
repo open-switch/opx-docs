@@ -41,8 +41,13 @@ cps_obj.add_list('allowed-match-fields', [e_ftype['SRC_MAC'],
                  e_ftype['DST_IP'], e_ftype['DSCP'], e_ftype['IN_PORT'
                  ]])
 
-#  Associate   the   CPS   Object   with   a CPS   operation cps_update   =  ('create',   cps_obj.get())
-#  Add   the   CPS   object   to   a new   CPS   Transaction cps_trans   =  cps_utils.CPSTransaction([cps_update])
+#  Associate   the   CPS   Object   with   a CPS   operation 
+
+cps_update   =  ('create',   cps_obj.get())
+
+#  Add   the   CPS   object   to   a new   CPS   Transaction 
+
+cps_trans   =  cps_utils.CPSTransaction([cps_update])
 
 #  Commit   the   CPS   transaction r =  cps_trans.commit()
 
