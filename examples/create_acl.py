@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 """Simple   Base   ACL  CPS   config   using   the   generic   CPS   Python   module   and utilities. 
 Create   ACL  Table
 Create   ACL  Entry   to   Drop   all   packets   received   on  specific   port   from   specific   Src   MAC 
