@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # Python code block to delete a route
 
 import cps_utils
