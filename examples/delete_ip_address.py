@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # Python code block to delete IP address
 
 import cps_utils
