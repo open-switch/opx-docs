@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # Python code block to create a route
 
 import cps_utils
@@ -36,6 +37,7 @@ transaction = cps_utils.CPSTransaction([cps_update])
 ret = transaction.commit()
 
 # Check for failure
+
 if not ret:
     raise RuntimeError('Error   creating   Route')
 
