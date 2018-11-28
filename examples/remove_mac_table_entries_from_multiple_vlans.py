@@ -1,23 +1,41 @@
-import   cps_utils
+#!/usr/bin/python
+# Python code to remove MAC table entries from multiple VLANs
 
-vlan_list   =[1,2,3,4,5]
+import cps_utils
 
-obj   =  cps_utils.CPSObject('base-mac/flush')
+# Define VLANs to remove MAC address entries from
 
-count   =  0
-el   =  ["input/filter","0","vlan"]
+vlan_list = [1, 2, 3, 4, 5]
 
-for   vlan   in   vlan_list:
-    obj.add_embed_attr(el,   vlan)
+# Create the CPS object
+
+obj = cps_utils.CPSObject('base-mac/flush')
+
+# Add the VLAN list to the CPS object
+
+count = 0
+el = ['input/filter', '0', 'vlan']
+
+for vlan in vlan_list:
+    obj.add_embed_attr(el, vlan)
     count = count + 1
 
-el[1]   =  str(count)
+el[1] = str(count)
 
-tr_obj   =  ('rpc',   obj.get())
-transaction   =  cps_utils.CPSTransaction([tr_obj])
-ret   =  transaction.commit()
+# Associate the operation to the CPS object
 
-if not   ret:
-    raise   RuntimeError("Error   Flushing   entries   from   MAC   Table")
+tr_obj = ('rpc', obj.get())
 
+# Create a transaction object
 
+transaction = cps_utils.CPSTransaction([tr_obj])
+
+# Check for failure
+
+ret = transaction.commit()
+
+if not ret:
+    raise RuntimeError('Error   Flushing   entries   from   MAC   Table'
+                       )
+
+print 'Successfully removed'
