@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # Python code block to delete port to VLAN
 
 import cps
@@ -31,4 +32,5 @@ transaction = cps.transaction([cps_update])
 
 if not transaction:
     raise RuntimeError('Error in deleting ports to Vlan')
+    
 print 'successful'
