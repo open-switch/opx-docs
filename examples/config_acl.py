@@ -1,4 +1,4 @@
-#Python code to configure ACL
+#Python code block to configure ACL
 
 import cps_utils
 
