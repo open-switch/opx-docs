@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # Python code to create ACL entry to drop all packets received on specific port from specific source MAC address
 
 # Import the CPS library
