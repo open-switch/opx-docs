@@ -1,4 +1,4 @@
-#Configure MAC address table entry
+#Python code block to configure MAC address table entry
 
 import cps_utils
 
