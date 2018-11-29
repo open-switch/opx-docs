@@ -1,26 +1,16 @@
-#!/usr/bin/python
-# Python code to delete ACL
-
+#Python code block to delete ACL entry
 import cps_utils
 
-# Create   the   CPS   Object   and fill the   table-id   and entry-id   key values
+#Create the CPS Object and fill the table-id and entry-id key values
+cps_obj = cps_utils.CPSObject(module='base-acl/entry', data={'table-id': 2, 'id': 1})
 
-cps_obj = cps_utils.CPSObject(module='base-acl/entry',
-                              data={'table-id': 2, 'id': 1})
-
-# Associate   the   CPS   Object   with   a CPS   operation
-
+#Associate the CPS Object with a CPS operation
 cps_update = ('delete', cps_obj.get())
 
-# Add   the   CPS   object   to   a new   CPS   Transaction
-
+#Add the CPS object to a new CPS Transaction
 cps_trans = cps_utils.CPSTransaction([cps_update])
 
-# Commit   the   CPS   transaction
-
-r = cps_trans.commit()
-
-# Check for failure
-
-if not r:
-    raise RuntimeError('Error   deleting   ACL  Entry')
+#Verify return value
+ret = cps_trans.commit()
+if not ret:
+    raise RuntimeError ("Error deleting ACL Entry")
