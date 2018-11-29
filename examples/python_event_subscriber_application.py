@@ -1,4 +1,4 @@
-#Python block code for CPS event subscriber application
+#Python code block for CPS event subscriber application
 
 import cps
 import cps_utils
