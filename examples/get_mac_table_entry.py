@@ -1,27 +1,21 @@
-#!/usr/bin/python
-# Python code to request MAC address table entry
+#Python code block to request MAC address table entry
 
 import   cps_utils 
 import   cps
 
-# Register the attribute type
-
+#Register the attribute type
 cps_utils.add_attr_type("base-mac/query/mac-address",   "mac")
 
-# Define the MAC address request type
-
+#Define the MAC address request type
 d  =     {"mac-address":   "00:0a:0b:cc:0d:0e","request-type":"2"}
 
-# Associate the get operation with the CPS object
-
+#Associate the get operation with the CPS object
 obj   =  cps_utils.CPSObject('base-mac/query', data=   d)
 
-# Create an object filter list
-
+#Create an object filter list
 filter_list   =  [] filter_list.append(obj.get()) l =  []
 
-# Check for failure
-
+#Check for failure
 if cps.get(filter_list,l):
     if l:
         for   ret_obj   in   l:
