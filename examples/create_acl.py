@@ -35,12 +35,13 @@ cps_update = ('create', cps_obj.get())
 # Define an add operation and object pair to the CPS transaction
 cps_trans = cps_utils.CPSTransaction([cps_update])
 
-# Verify the return value
+# Verify return value
 ret = cps_trans.commit()
 if not ret:
     raise RuntimeError ("Error creating ACL Table")
+ret = cps_utils.CPSObject (module='base-acl/table', obj=r[0]['change'])
     
 # Retrieve the CPS objectID from the ACL table
-ret = cps_utils.CPSObject (module='base-acl/table', obj=r[0]['change'])
-tbl_id = cps_get_val.get_attr_data ('id')
+cps_get_val = cps_utils.CPSObject (module='base-acl/table', obj=r[0]['change'])
+tbl_id = ret.get_attr_data ('id')
 print "Successfully created ACL Table " + str(tbl_id)
